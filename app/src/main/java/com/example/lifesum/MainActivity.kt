@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.fragment_d_iary.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +23,19 @@ class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        Water.setOnClickListener {
+            Water.playAnimation()
+        }
+        Water2.setOnClickListener {
+            Water2.playAnimation()
+        }
+        Water3.setOnClickListener {
+            Water3.playAnimation()
+        }
+        Water4.setOnClickListener {
+            Water4.playAnimation()
+        }
         setContentView(R.layout.fragment_d_iary)
         auth = FirebaseAuth.getInstance()
         dbroot = FirebaseFirestore.getInstance()
@@ -29,6 +43,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
 
     private fun getUserDetailsFromServer() {
         val uid = auth.currentUser?.uid
@@ -70,3 +85,4 @@ class MainActivity : AppCompatActivity() {
 //        Glide.with(this).load(photo).into(gPic)
 //    }
 }
+//Prachi Pardeshi

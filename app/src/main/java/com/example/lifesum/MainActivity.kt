@@ -12,6 +12,7 @@ import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var dbroot: FirebaseFirestore
@@ -55,3 +56,4 @@ class MainActivity : AppCompatActivity() {
         Glide.with(this).load(photo).into(gPic)
     }
 }
+//Prachi Pardeshi

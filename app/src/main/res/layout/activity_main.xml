@@ -21,9 +21,25 @@
         android:text="Hello World!"
         android:textSize="22sp" />
 
-    <ImageView
-        android:id="@+id/gPic"
-        android:layout_width="400dp"
-        android:layout_height="400dp" />
+    <TextView
+        android:id="@+id/gHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/g_curr_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/g_goal_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:textSize="22sp" />
 
 </LinearLayout>

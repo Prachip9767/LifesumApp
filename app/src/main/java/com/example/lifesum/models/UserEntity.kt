@@ -8,7 +8,6 @@ import androidx.room.PrimaryKey
 class UserEntity(
     @ColumnInfo(name = "name_of_user") var name_of_user: String,
     @ColumnInfo(name = "email") var email: String,
-    @ColumnInfo(name = "img_url") var img_url: String,
     @ColumnInfo(name = "goalType") var goalType: Int,
     @ColumnInfo(name = "gender") var gender: String,
     @ColumnInfo(name = "b_date") var b_date: Int,

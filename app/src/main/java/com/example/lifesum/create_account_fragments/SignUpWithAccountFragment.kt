@@ -107,19 +107,14 @@ class SignUpWithAccountFragment : Fragment(R.layout.fragment_sign_up_with_accoun
                     val x = gAuth.currentUser
                     val name = x?.displayName.toString()
                     val email = x?.email.toString()
-                    val img_url = x?.photoUrl.toString()
                     val user = UserEntity(
-                        name, email, img_url, goalType, gender, bDate, bMonth, bYear,
+                        name, email, goalType, gender, bDate, bMonth, bYear,
                         height, curr_weight, goal_weight
                     )
                     val docPath = FirebaseAuth.getInstance().currentUser!!.uid
                     dbroot.collection("Users").document(docPath).set(user)
-                    //dbroot.collection("Users").document(docPath).collection("EnergyInfo").document("uid1").set(user)
-//                        .addOnCompleteListener(this.requireActivity()) { task ->
-//                            toast("Inserted")
-//                        }
+                    //dbroot.collection("Users").document(docPath).collection("EnergyInfo").document("row1").set(user)
 
-//
                     startActivity(Intent(context, MainActivity::class.java))
                 } else {
                     toast("Sign in Failed")

@@ -31,21 +31,17 @@ class BottomSheetSignIn : BottomSheetDialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = gAuth.currentUser
         if (currentUser != null)
             startActivity(Intent(context, MainActivity::class.java))
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        gAuth = FirebaseAuth.getInstance()
-        processRequestToGoogle()
-
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        gAuth = FirebaseAuth.getInstance()
+        processRequestToGoogle()
+
         btn_continue_with_google.setOnClickListener {
             executeLoginProcess();
         }
@@ -64,17 +60,15 @@ class BottomSheetSignIn : BottomSheetDialogFragment() {
             .requestEmail()
             .build()
 
-        googleSignInClient = GoogleSignIn.getClient(context, gso)
+        googleSignInClient = GoogleSignIn.getClient(this.requireActivity(), gso)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             try {
-                // Google Sign In was successful, authenticate with Firebase
                 val account = task.getResult(ApiException::class.java)!!
                 firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
@@ -92,11 +86,8 @@ class BottomSheetSignIn : BottomSheetDialogFragment() {
                 if (task.isSuccessful) {
                     val user = gAuth.currentUser
                     startActivity(Intent(context, MainActivity::class.java))
-                    //updateUI(user)
                 } else {
                     Toast.makeText(context, "Sign In Failed!", Toast.LENGTH_SHORT).show()
-                    // If sign in fails, display a message to the user.
-                    //updateUI(null)
                 }
             }
     }

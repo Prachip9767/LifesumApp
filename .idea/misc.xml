@@ -3,13 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifesumApp/app/src/main/res/layout/activity_main.xml" value="0.19722222222222222" />
-        <entry key="..\:/Users/parde/AndroidStudioProjects/UnitFOurProject/app/src/main/res/drawable/add.xml" value="0.2703125" />
-        <entry key="..\:/Users/parde/AndroidStudioProjects/UnitFOurProject/app/src/main/res/drawable/ctr_bg.xml" value="0.2703125" />
-        <entry key="..\:/Users/parde/AndroidStudioProjects/UnitFOurProject/app/src/main/res/drawable/layout_bg.xml" value="0.2703125" />
-        <entry key="..\:/Users/parde/AndroidStudioProjects/UnitFOurProject/app/src/main/res/drawable/oval.xml" value="0.2703125" />
-        <entry key="..\:/Users/parde/AndroidStudioProjects/UnitFOurProject/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/parde/AndroidStudioProjects/UnitFOurProject/app/src/main/res/layout/fragment_d_iary.xml" value="0.25416666666666665" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/drawable/custom_button.xml" value="0.19583333333333333" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/drawable/ic_baseline_attribution_24.xml" value="0.18611111111111112" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/drawable/ic_outline_favorite_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/activity_main.xml" value="0.16574074074074074" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.17314814814814813" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/fragment_profile_.xml" value="0.22" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/fragment_settings.xml" value="0.22" />
       </map>
     </option>
   </component>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "224186238993",
+    "project_id": "lifesum-7fc58",
+    "storage_bucket": "lifesum-7fc58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224186238993:android:4276c396ce4e4e699ec9b0",
+        "android_client_info": {
+          "package_name": "com.example.lifesum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224186238993-ub98u3f9g0rf39bdrogbuambagbgcdnr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lifesum",
+            "certificate_hash": "15be8149b0707fa43f19d93d982107f3a0ad4465"
+          }
+        },
+        {
+          "client_id": "224186238993-7hc6dc39hhgluc0jl5rtkruq3t9qo6s7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCW-RfUJDW8yomREgUEGSf6QTx-p8ne62c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "224186238993-7hc6dc39hhgluc0jl5rtkruq3t9qo6s7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

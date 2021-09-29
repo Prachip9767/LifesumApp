@@ -43,7 +43,7 @@ class BottomSheetSignIn : BottomSheetDialogFragment() {
         processRequestToGoogle()
 
         btn_continue_with_google.setOnClickListener {
-            executeLoginProcess();
+            executeLoginProcess()
         }
     }
 

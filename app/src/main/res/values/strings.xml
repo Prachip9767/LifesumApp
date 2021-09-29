@@ -2,4 +2,6 @@
     <string name="app_name">Lifesum</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="privacy_text">We use this information to calculate and provide you with\ndaily personalised recommendations.</string>
+    <string name="tnc_pp">By continuing, you agree to Lifesum`s Terms and Conditions\n and privacy policy.</string>
 </resources>

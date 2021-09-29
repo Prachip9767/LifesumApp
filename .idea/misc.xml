@@ -8,8 +8,11 @@
         <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/drawable/ic_outline_favorite_24.xml" value="0.19583333333333333" />
         <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/activity_main.xml" value="0.16574074074074074" />
         <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.17314814814814813" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/fragment_choose_goal.xml" value="0.22" />
         <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/fragment_profile_.xml" value="0.22" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/fragment_select_gender.xml" value="0.1796875" />
         <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/fragment_settings.xml" value="0.22" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/fragment_sign_up_with_account.xml" value="0.22" />
       </map>
     </option>
   </component>

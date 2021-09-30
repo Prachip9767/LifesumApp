@@ -5,20 +5,20 @@
     android:layout_height="match_parent"
     android:background="#f0f0e6"
     android:orientation="vertical"
-    tools:context=".SettingsFragment">
+    tools:context=".view.SettingsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#41cd8c"
+        android:padding="20dp"
         android:orientation="horizontal"
         android:weightSum="8">
 
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
+            android:layout_height="35dp"
+
             android:layout_weight="2"
             android:src="@drawable/ic_baseline_arrow_back_24" />
 
@@ -63,6 +63,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        android:padding="5dp"
+
                         android:text="My goal"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -71,6 +73,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        android:padding="5dp"
+
                         android:text="Personal details"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -79,6 +83,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        android:padding="5dp"
+
                         android:text="Nutrition settings"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -86,6 +92,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
                         android:layout_margin="10dp"
                         android:text="Food preferences"
                         android:textColor="@color/black"
@@ -95,6 +102,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        android:padding="5dp"
                         android:text="Allergies"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -104,6 +112,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:layout_margin="10dp"
 
                 android:text="NOTIFICATIONS" />
@@ -121,6 +130,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
                         android:layout_margin="10dp"
                         android:text="Notification Settings"
                         android:textColor="@color/black"
@@ -132,6 +142,7 @@
 
             <TextView
                 android:layout_width="match_parent"
+                android:padding="5dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="DIARY" />
@@ -149,11 +160,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
                         android:layout_margin="10dp"
                         android:text="Diary Settings"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
-
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -162,6 +173,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:padding="5dp"
 
                 android:text="ACCOUNT" />
 
@@ -176,6 +188,7 @@
 
                     <TextView
                         android:layout_width="wrap_content"
+                        android:padding="5dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="Invite friends"
@@ -184,6 +197,7 @@
 
                     <TextView
                         android:layout_width="wrap_content"
+                        android:padding="5dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="Account Settings"
@@ -193,6 +207,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
                         android:layout_margin="10dp"
                         android:text="Account type"
                         android:textColor="@color/black"
@@ -205,6 +220,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:layout_margin="10dp"
                 android:text="SOCIAL"
                 />
@@ -220,15 +236,17 @@
                     android:weightSum="8">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_margin="5dp"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:src="@drawable/ic_google_icon" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
                         android:layout_gravity="center_vertical"
                         android:layout_margin="10dp"
                         android:layout_weight="5"
@@ -239,6 +257,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
                         android:layout_gravity="center_vertical"
                         android:layout_margin="10dp"
                         android:layout_weight="2"
@@ -250,6 +269,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:layout_margin="10dp"
                 android:text="IMPORT AND EXPORT HEALTH DATA" />
 
@@ -266,6 +286,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
                         android:layout_margin="10dp"
                         android:text="Automatic tracking"
                         android:textColor="@color/black"
@@ -277,6 +298,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:layout_margin="10dp"
 
                 android:text="HELP" />
@@ -293,6 +315,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
                         android:layout_margin="10dp"
                         android:text="Terms &amp; Conditions"
                         android:textColor="@color/black"
@@ -301,6 +324,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
                         android:layout_margin="10dp"
                         android:text="Open-source licenses"
                         android:textColor="@color/black"
@@ -309,6 +333,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
                         android:layout_margin="10dp"
                         android:text="Contact us"
                         android:textColor="@color/black"
@@ -317,6 +342,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
                         android:layout_margin="10dp"
                         android:text="Lifesum Blog"
                         android:textColor="@color/black"
@@ -338,6 +364,7 @@
 
                     <TextView
                         android:layout_width="wrap_content"
+                        android:padding="5dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="Log out"
@@ -345,6 +372,12 @@
                         android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/setting_bottom"/>
+
 
 
         </LinearLayout>

@@ -1,8 +1,9 @@
-package com.example.lifesum
+package com.example.lifesum.view
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.lifesum.R
 import kotlinx.android.synthetic.main.activity_lets_start.*
 
 class LetsStartActivity : AppCompatActivity() {

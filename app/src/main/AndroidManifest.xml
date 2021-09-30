@@ -13,22 +13,22 @@
         android:theme="@style/Theme.Lifesum">
 
         <activity
-            android:name=".LetsStartActivity"
+            android:name=".view.LetsStartActivity"
             android:exported="true" />
 
         <activity
-            android:name=".CreateAccountActivity"
+            android:name=".view.CreateAccountActivity"
             android:exported="true" />
         <activity
             android:name=".AuthenticationActivity"
             android:exported="true" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".view.SplashScreen"
             android:exported="true">
 
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

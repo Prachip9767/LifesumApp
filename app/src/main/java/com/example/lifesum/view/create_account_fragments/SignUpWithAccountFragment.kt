@@ -1,4 +1,4 @@
-package com.example.lifesum.create_account_fragments
+package com.example.lifesum.view.create_account_fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.lifesum.MainActivity
+import com.example.lifesum.view.MainActivity
 import com.example.lifesum.R
 import com.example.lifesum.models.UserEntity
 import com.google.android.gms.auth.api.signin.GoogleSignIn

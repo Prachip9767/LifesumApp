@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/dull_green"
     android:orientation="vertical"
-    tools:context=".LetsStartActivity">
+    tools:context=".UI.LetsStartActivity">
 
     <RelativeLayout
         android:id="@+id/topBarCreateAccount"

@@ -1,7 +1,8 @@
-package com.example.lifesum
+package com.example.lifesum.UI
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.lifesum.R
 import com.example.lifesum.create_account_fragments.ChooseGoalFragment
 
 class CreateAccountActivity : AppCompatActivity() {

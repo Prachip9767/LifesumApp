@@ -1,4 +1,4 @@
-package com.example.lifesum
+package com.example.lifesum.UI
 
 import android.content.Intent
 import android.graphics.Color
@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import com.example.lifesum.R
 import kotlinx.android.synthetic.main.activity_authentication.*
 
 class AuthenticationActivity : AppCompatActivity() {

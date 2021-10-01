@@ -13,21 +13,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.recipe_layout)
+//
+//        Water.setOnClickListener {
+//            if (Water.isAnimating) {
+//                Water.reverseAnimationSpeed()
+//            } else {
+//                Water.playAnimation()
+//            }
+//        }
 
-        Water.setOnClickListener {
-            if (Water.isAnimating) {
-                Water.reverseAnimationSpeed()
-            } else {
-                Water.playAnimation()
-            }
-        }
-            Water2.setOnClickListener {
-                if (Water.isAnimating) {
-                    Water.reverseAnimationSpeed()
-                } else if(Water2.isAnimating){
-                    Water2.reverseAnimationSpeed()
-                }
-            }
+
         }
     }

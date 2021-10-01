@@ -7,6 +7,6 @@ import com.example.lifesum.R
 class RecipeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recipe)
+        setContentView(R.layout.recipe_layout)
     }
 }

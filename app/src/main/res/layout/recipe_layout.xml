@@ -36,6 +36,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:padding="5dp"
+                    android:textColor="#242424"
                     android:text="Banana and oat smoothie"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -58,6 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:padding="5dp"
+                    android:textColor="#757575"
                     android:text="10 min"
                     android:textSize="15sp"
                     app:layout_constraintStart_toEndOf="@id/ivTimer"
@@ -80,6 +82,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:padding="5dp"
+                    android:textColor="#757575"
                     android:text="10 min"
                     android:textSize="15sp"
                     app:layout_constraintStart_toEndOf="@id/ivKcal"
@@ -98,6 +101,7 @@
                     app:layout_constraintTop_toBottomOf="@id/ivTimer" />
 
                 <TextView
+                    android:textColor="#7b7b7b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -127,6 +131,7 @@
                     android:layout_marginBottom="20dp"
                     android:paddingTop="20dp"
                     android:paddingBottom="10dp"
+                    android:textColor="#242424"
                     android:text="nutritional information"
                     android:textAllCaps="true"
                     android:textSize="20sp"
@@ -135,6 +140,7 @@
                     tools:ignore="MissingConstraints" />
 
                 <TextView
+                    android:textColor="#757575"
                     android:id="@+id/tvPerserve"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -152,10 +158,10 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginStart="45dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:cpb_background_progressbar_color="#88d8c0"
+                    app:cpb_background_progressbar_color="#f0f0f0"
                     app:cpb_background_progressbar_width="5dp"
                     app:cpb_progress_direction="to_right"
-                    app:cpb_progressbar_color="#f2f3f4"
+                    app:cpb_progressbar_color="#757575"
                     app:cpb_progressbar_width="10dp"
                     app:cpb_round_border="false"
                     app:layout_constraintTop_toBottomOf="@id/tvPerserve"
@@ -169,10 +175,10 @@
                     android:layout_marginTop="4dp"
                     app:layout_constraintStart_toEndOf="@id/circularProgressBar"
                     android:layout_marginStart="30dp"
-                    app:cpb_background_progressbar_color="#88d8c0"
+                    app:cpb_background_progressbar_color="#f0f0f0"
                     app:cpb_background_progressbar_width="5dp"
                     app:cpb_progress_direction="to_right"
-                    app:cpb_progressbar_color="#f2f3f4"
+                    app:cpb_progressbar_color="#757575"
                     app:cpb_progressbar_width="10dp"
                     app:cpb_round_border="false"
                     app:layout_constraintTop_toBottomOf="@id/tvPerserve"
@@ -185,10 +191,10 @@
                     android:layout_marginStart="30dp"
                     android:layout_gravity="center|top"
                     android:layout_marginTop="4dp"
-                    app:cpb_background_progressbar_color="#88d8c0"
+                    app:cpb_background_progressbar_color="#f0f0f0"
                     app:cpb_background_progressbar_width="5dp"
                     app:cpb_progress_direction="to_right"
-                    app:cpb_progressbar_color="#f2f3f4"
+                    app:cpb_progressbar_color="#757575"
                     app:cpb_progressbar_width="10dp"
                     app:cpb_round_border="false"
                     app:layout_constraintStart_toEndOf="@id/circularProgressBar2"
@@ -200,8 +206,10 @@
                     android:layout_marginStart="20dp"
                     app:layout_constraintTop_toBottomOf="@id/circularProgressBar"
                     android:text="Carbs"
+                    android:textColor="#242424"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:textColor="#242424"
                     app:layout_constraintStart_toStartOf="@id/circularProgressBar2"
                     android:layout_width="wrap_content"
                     android:layout_marginStart="20dp"
@@ -209,6 +217,7 @@
                     android:text="Protein"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:textColor="#242424"
                     app:layout_constraintStart_toStartOf="@id/circularProgressBar3"
                     android:layout_width="wrap_content"
                     android:layout_marginStart="35dp"
@@ -216,6 +225,7 @@
                     android:text="Fat"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:textColor="#242424"
                     android:layout_width="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="75dp"
@@ -224,6 +234,7 @@
                     android:text="47%"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:textColor="#242424"
                     android:layout_width="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="190dp"
@@ -232,6 +243,7 @@
                     android:text="16%"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:textColor="#242424"
                     android:layout_width="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="305dp"
@@ -270,6 +282,7 @@
                     android:drawableStart="@drawable/ic_jar"
                     android:drawablePadding="15dp"
                     android:padding="5dp"
+                    android:textColor="#303030"
                     android:text="Ingredients"
                     android:textAllCaps="true"
                     android:textSize="20sp"
@@ -283,12 +296,14 @@
                     android:layout_marginStart="70dp"
                     android:layout_marginTop="40dp"
                     android:padding="3dp"
+                    android:textColor="#757575"
                     android:text="4 serve"
                     android:textSize="15sp"
                     app:layout_constraintStart_toEndOf="@id/ivJar"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:textColor="#252525"
                     android:id="@+id/Step1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -301,6 +316,7 @@
                     app:layout_constraintTop_toBottomOf="@id/tvServe" />
 
                 <TextView
+                    android:textColor="#252525"
                     android:id="@+id/Step2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -313,6 +329,7 @@
                     app:layout_constraintTop_toBottomOf="@id/Step1" />
 
                 <TextView
+                    android:textColor="#252525"
                     android:id="@+id/Step3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -325,6 +342,7 @@
                     app:layout_constraintTop_toBottomOf="@id/Step2" />
 
                 <TextView
+                    android:textColor="#252525"
                     android:id="@+id/Step4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -337,6 +355,7 @@
                     app:layout_constraintTop_toBottomOf="@id/Step3" />
 
                 <TextView
+                    android:textColor="#252525"
                     android:id="@+id/Step5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -349,6 +368,7 @@
                     app:layout_constraintTop_toBottomOf="@id/Step4" />
 
                 <TextView
+                    android:textColor="#252525"
                     android:id="@+id/Step6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -382,6 +402,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:textColor="#252525"
                     android:id="@+id/tvInstructions"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -397,6 +418,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:textColor="#252525"
                     android:id="@+id/InstructionOne"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -409,6 +431,7 @@
                     app:layout_constraintTop_toBottomOf="@id/tvInstructions" />
 
                 <TextView
+                    android:textColor="#252525"
                     android:id="@+id/InstructionTwo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

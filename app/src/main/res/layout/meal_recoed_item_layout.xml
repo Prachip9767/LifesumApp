@@ -9,7 +9,7 @@
     android:padding="@dimen/dp_12">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/iv_search_meal_image"
+        android:id="@+id/iv_meal_image"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:scaleType="centerCrop"
@@ -28,11 +28,11 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/lastLayout"
-        app:layout_constraintStart_toEndOf="@id/iv_search_meal_image"
+        app:layout_constraintStart_toEndOf="@id/iv_meal_image"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tv_search_item_name"
+            android:id="@+id/tv_item_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_12"
@@ -56,7 +56,7 @@
         <!--            app:layout_constraintTop_toBottomOf="@+id/tvProductName" />-->
 
         <TextView
-            android:id="@+id/tv_search_kacl"
+            android:id="@+id/tv_kacl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_12"
@@ -77,10 +77,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/btn_add_meal_from_search"
+            android:id="@+id/btn_add_meal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_plus_svgrepo_com" />
+            android:src="@drawable/ic_checked_tick" />
 
 
     </RelativeLayout>

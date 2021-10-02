@@ -2,23 +2,20 @@ package com.example.lifesum.UI
 
 import MySliderImageAdapter
 import android.os.Bundle
-import android.view.View
-import android.view.animation.Animation
 import androidx.appcompat.app.AppCompatActivity
 import com.example.lifesum.R
 import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.fragment_plan.*
 
 
-class MainActivity : AppCompatActivity() {
+class PlanTest : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_plan)
 
-
-imageSliderView()
+        imageSliderView()
         }
     private fun setImageInSlider(images: ArrayList<String>, imageSlider: SliderView) {
         val adapter = MySliderImageAdapter()

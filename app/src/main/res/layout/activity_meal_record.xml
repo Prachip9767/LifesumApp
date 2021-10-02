@@ -22,6 +22,7 @@
             android:orientation="horizontal">
 
             <ImageButton
+                android:id="@+id/iv_back_btn_meal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/selected_green"
@@ -30,6 +31,7 @@
                 app:tint="@color/white" />
 
             <TextView
+                android:id="@+id/tv_act_type_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="BREAKFAST"
@@ -38,8 +40,8 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/etSearchBar"
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/etMealSearchBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="18dp"
@@ -51,16 +53,26 @@
             android:padding="@dimen/dp_12"
             android:textColorHint="#546E7A"
             android:textSize="@dimen/sp_15"
-            app:drawableStartCompat="@drawable/ic_search_24" />
+            app:drawableStartCompat="@drawable/ic_search_24"/>
     </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSearchFood"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_layout_rc"
+        tools:itemCount="4"
+        tools:listitem="@layout/meal_search_item_layout" />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_meal_record"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        tools:listitem="@layout/meal_search_item_layout"
+        android:visibility="gone"
+        tools:listitem="@layout/meal_recoed_item_layout"
         tools:itemCount="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top_layout_rc" />

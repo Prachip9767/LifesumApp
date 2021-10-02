@@ -25,7 +25,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.jetbrains.anko.toast
 
-class MainActivity : AppCompatActivity(), onBackPressForFragment {
+class MainActivity : AppCompatActivity(){
 
 
     private lateinit var roomDB: MainRoomDB
@@ -95,12 +95,12 @@ class MainActivity : AppCompatActivity(), onBackPressForFragment {
 
     private fun bottomNavigation() {
         supportFragmentManager.beginTransaction()
-            .add(R.id.mainActivityFragmentContainer, DiaryFragment(this))
+            .add(R.id.mainActivityFragmentContainer, DiaryFragment())
             .commit()
         botton_navigation.setOnItemSelectedListener { item ->
             var temp: Fragment? = null
             when (item.itemId) {
-                R.id.menu_home -> temp = DiaryFragment(this)
+                R.id.menu_home -> temp = DiaryFragment()
                 R.id.menu_search -> temp = ProfileFragment()
                 R.id.menu_orders -> temp = PlansFragment()
                 R.id.menu_dunzo_cash -> temp = RecipeListFragment()
@@ -119,9 +119,7 @@ class MainActivity : AppCompatActivity(), onBackPressForFragment {
         Log.d("rkpsx7", str)
     }
 
-    override fun onCancelPressForFragment() {
-        onBackPressed()
-    }
+
 }
 //    private fun getUserDetailsFromGoogle() {
 //        var account = GoogleSignIn.getLastSignedInAccount(this)

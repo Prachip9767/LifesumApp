@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.lifesum.R
 import com.google.android.gms.common.api.internal.LifecycleCallback.getFragment
 import com.google.android.material.datepicker.MaterialDatePicker
-import kotlinx.android.synthetic.main.dummy_layout.*
+import kotlinx.android.synthetic.main.fragment_diary.*
 import pl.rspective.pagerdatepicker.adapter.DatePagerFragmentAdapter
 import pl.rspective.pagerdatepicker.adapter.DefaultDateAdapter
 import pl.rspective.pagerdatepicker.view.RecyclerViewInsetDecoration
@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class DiaryFragment : Fragment(R.layout.dummy_layout) {
+class DiaryFragment : Fragment(R.layout.fragment_diary) {
 
 
     @RequiresApi(Build.VERSION_CODES.N)

@@ -10,7 +10,6 @@ import com.example.lifesum.LocalDatabase.DAO
 import com.example.lifesum.LocalDatabase.MainRoomDB
 import com.example.lifesum.R
 import com.example.lifesum.UI.activites.MealRecordActivity
-import com.example.lifesum.UI.activites.onBackPressForFragment
 import com.example.lifesum.models.DailyMealData
 import com.example.lifesum.models.FoodItem
 import com.example.lifesum.repositary.Repo
@@ -29,7 +28,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class DiaryFragment(val onBackPress: onBackPressForFragment) : Fragment(R.layout.fragment_diary) {
+class DiaryFragment() : Fragment(R.layout.fragment_diary) {
 
     private lateinit var roomDB: MainRoomDB
     private lateinit var dao: DAO

@@ -17,9 +17,9 @@ class LifeSumViewModel(val repo: Repo) : ViewModel() {
         repo.addDashboardDataToServer(dsbData)
     }
 
-    fun getUserDetailsFromServer() {
-        repo.getUserDetailsFromServer()
-    }
+//    fun getUserDetailsFromServer() {
+//        repo.getUserDetailsFromServer()
+//    }
 
     fun getUserDetailsFromDB(): LiveData<UserEntity> {
         return repo.getUserDetailsFromDB()

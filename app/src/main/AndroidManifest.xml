@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lifesum">
+
         <activity
             android:name=".UI.activites.MealRecordActivity"
             android:exported="true" />
@@ -19,7 +20,7 @@
             android:exported="true" />
         <activity
             android:name=".UI.activites.SettingsActivity"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".UI.activites.LetsStartActivity"
             android:exported="true" />
@@ -32,15 +33,17 @@
         <activity
             android:name=".UI.activites.SplashScreen"
             android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".UI.activites.MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".UI.activites.MainActivity"
-            android:exported="true"></activity>
     </application>
 
 </manifest>

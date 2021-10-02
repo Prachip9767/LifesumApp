@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     android:src="@drawable/spl_img"
     android:scaleType="fitXY"
-    tools:context=".SplashScreen">
+    tools:context=".UI.activites.SplashScreen">
 
 </ImageView>

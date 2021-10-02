@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".UI.activites.MainActivity">
 
 
     <LinearLayout
@@ -270,9 +270,9 @@
                             android:layout_marginTop="10dp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/app_bar"
-                            app:lottie_autoPlay="false"
-                            app:lottie_loop="false"
-                            app:lottie_rawRes="@raw/glasswater"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/glass_fill"
                             tools:ignore="NotSibling" />
 
                         <com.airbnb.lottie.LottieAnimationView
@@ -282,9 +282,9 @@
                             android:layout_marginTop="10dp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/app_bar"
-                            app:lottie_autoPlay="false"
-                            app:lottie_loop="false"
-                            app:lottie_rawRes="@raw/glasswater"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/glass_fill_reverse"
                             tools:ignore="NotSibling" />
 
                         <com.airbnb.lottie.LottieAnimationView
@@ -294,9 +294,9 @@
                             android:layout_marginTop="10dp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/app_bar"
-                            app:lottie_autoPlay="false"
-                            app:lottie_loop="false"
-                            app:lottie_rawRes="@raw/glasswater"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/glass_fill"
                             tools:ignore="NotSibling" />
 
                         <com.airbnb.lottie.LottieAnimationView
@@ -306,9 +306,9 @@
                             android:layout_marginTop="10dp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/app_bar"
-                            app:lottie_autoPlay="false"
-                            app:lottie_loop="false"
-                            app:lottie_rawRes="@raw/glasswater"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/glass_fill_reverse"
                             tools:ignore="NotSibling" />
                     </LinearLayout>
 

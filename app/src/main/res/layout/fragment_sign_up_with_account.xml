@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:backgroundTint="@color/white"
-    tools:context=".view.create_account_fragments.SignUpWithAccountFragment">
+    tools:context=".create_account_fragments.SignUpWithAccountFragment">
 
     <LinearLayout
         android:id="@+id/top_layout_tip"

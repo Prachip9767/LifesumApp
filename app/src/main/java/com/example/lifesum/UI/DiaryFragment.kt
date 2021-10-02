@@ -42,8 +42,6 @@ class DiaryFragment : Fragment(R.layout.dummy_layout) {
         val materialDatePicker = materialDateBuilder.build()
 
 
-
-
         select_date.setOnClickListener {
 
             materialDatePicker.show(requireFragmentManager(), "MATERIAL_DATE_PICKER");

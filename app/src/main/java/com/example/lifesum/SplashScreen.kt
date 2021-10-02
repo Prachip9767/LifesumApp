@@ -1,12 +1,10 @@
-package com.example.lifesum.view
+package com.example.lifesum
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import com.example.lifesum.AuthenticationActivity
-import com.example.lifesum.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase

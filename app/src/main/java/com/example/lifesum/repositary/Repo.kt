@@ -13,9 +13,9 @@ import kotlinx.coroutines.launch
 class Repo(private val dao: DAO) {
     private val fsRoot = FirebaseFirestore.getInstance()
     private val userUID = FirebaseAuth.getInstance().uid
-//    private val userRef = fsRoot.collection("Users").document(userUID!!)
-//    private val dashboardRef = fsRoot.collection("Users").document(userUID!!)
-//        .collection("Dashboard").document(userUID)
+    private val userRef = fsRoot.collection("Users").document(userUID!!)
+    private val dashboardRef = fsRoot.collection("Users").document(userUID!!)
+        .collection("Dashboard").document(userUID)
 
     fun addUserDetailsToServer(user: UserEntity) {
         fsRoot.collection("Users").document(userUID!!).set(user)
@@ -26,30 +26,30 @@ class Repo(private val dao: DAO) {
             .collection("Dashboard").document(userUID).set(dsbData)
     }
 
-//    fun getUserDetailsFromServer() {
-//        userRef.get().addOnSuccessListener {
-//            if (it.exists()) {
-//                val name = it.getString("name_of_user").toString()
-//                val email = it.getString("email").toString()
-//                val goalType = it.get("goalType").toString().toInt()
-//                val gender = it.getString("gender").toString()
-//                val b_date = it.get("b_date").toString().toInt()
-//                val b_month = it.getString("b_month").toString()
-//                val b_year = it.get("b_year").toString().toInt()
-//                val height = it.get("height").toString().toInt()
-//                val curr_weight = it.get("curr_weight").toString().toInt()
-//                val goal_weight = it.get("goal_weight").toString().toInt()
-//
-//                val user = UserEntity(
-//                    name, email,
-//                    goalType, gender, b_date, b_month, b_year, height, curr_weight, goal_weight
-//                )
-//                CoroutineScope(Dispatchers.IO).launch {
-//                    dao.insertUserDetails(user)
-//                }
-//            }
-//        }
-//    }
+    fun getUserDetailsFromServer() {
+        userRef.get().addOnSuccessListener {
+            if (it.exists()) {
+                val name = it.getString("name_of_user").toString()
+                val email = it.getString("email").toString()
+                val goalType = it.get("goalType").toString().toInt()
+                val gender = it.getString("gender").toString()
+                val b_date = it.get("b_date").toString().toInt()
+                val b_month = it.getString("b_month").toString()
+                val b_year = it.get("b_year").toString().toInt()
+                val height = it.get("height").toString().toInt()
+                val curr_weight = it.get("curr_weight").toString().toInt()
+                val goal_weight = it.get("goal_weight").toString().toInt()
+
+                val user = UserEntity(
+                    name, email,
+                    goalType, gender, b_date, b_month, b_year, height, curr_weight, goal_weight
+                )
+                CoroutineScope(Dispatchers.IO).launch {
+                    dao.insertUserDetails(user)
+                }
+            }
+        }
+    }
 
     fun getDashboardDataFromServer() {
         dashboardRef.get().addOnSuccessListener {

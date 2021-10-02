@@ -29,29 +29,29 @@ import org.jetbrains.anko.toast
 class MainActivity : AppCompatActivity(), onBackPressForFragment {
 
 
-//    private lateinit var roomDB: MainRoomDB
-//    private lateinit var dao: DAO
-//    private lateinit var repo: Repo
-//    private lateinit var viewModel: LifeSumViewModel
-//
-//    private var uid: String? = null
-//    lateinit var userRef: DocumentReference
-//    lateinit var dashboardRef: DocumentReference
-//    private lateinit var dbroot: FirebaseFirestore
-//    private lateinit var auth: FirebaseAuth
-//    private lateinit var db: FirebaseDatabase
-//    private lateinit var foodItemRef: DatabaseReference
-//    private var dataList = ArrayList<FoodItem>()
+    private lateinit var roomDB: MainRoomDB
+    private lateinit var dao: DAO
+    private lateinit var repo: Repo
+    private lateinit var viewModel: LifeSumViewModel
+
+    private var uid: String? = null
+    lateinit var userRef: DocumentReference
+    lateinit var dashboardRef: DocumentReference
+    private lateinit var dbroot: FirebaseFirestore
+    private lateinit var auth: FirebaseAuth
+    private lateinit var db: FirebaseDatabase
+    private lateinit var foodItemRef: DatabaseReference
+    private var dataList = ArrayList<FoodItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        initMV()
+        initMV()
         bottomNavigation()
 
-        //insertToDailyMealDB()
+//        insertToDailyMealDB()
         viewModel.getDashboardDataFromServer()//and add to room
-       // viewModel.getUserDetailsFromServer()//and add to room
+        viewModel.getUserDetailsFromServer()//and add to room
     }
 
     private fun insertToDailyMealDB() {
@@ -78,10 +78,10 @@ class MainActivity : AppCompatActivity(), onBackPressForFragment {
     }
 
     private fun initMV() {
-//        roomDB = MainRoomDB.getMainRoomDb(this)
-//        dao = roomDB.getDao()
-//        repo = Repo(dao)
-//        viewModel = LifeSumViewModel(repo)
+        roomDB = MainRoomDB.getMainRoomDb(this)
+        dao = roomDB.getDao()
+        repo = Repo(dao)
+        viewModel = LifeSumViewModel(repo)
 
         db = FirebaseDatabase.getInstance()
         auth = FirebaseAuth.getInstance()

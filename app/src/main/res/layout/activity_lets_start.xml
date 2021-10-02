@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/dull_green"
     android:orientation="vertical"
-    tools:context=".UI.LetsStartActivity">
+    tools:context=".UI.activites.LetsStartActivity">
 
     <RelativeLayout
         android:id="@+id/topBarCreateAccount"
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.Toolbar
+        <Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true">
@@ -27,7 +27,7 @@
                 android:background="@color/dull_green"
                 android:src="@drawable/ic_arrow_back" />
 
-        </androidx.appcompat.widget.Toolbar>
+        </Toolbar>
     </RelativeLayout>
 
     <VideoView

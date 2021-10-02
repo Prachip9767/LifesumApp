@@ -2,13 +2,13 @@ package com.example.lifesum
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-<<<<<<< HEAD:app/src/main/java/com/example/lifesum/MainActivity.kt
+//<<<<<<< HEAD:app/src/main/java/com/example/lifesum/MainActivity.kt
 import com.example.lifesum.UI.DiaryFragment
 
-class MainActivity : AppCompatActivity(), onBackPressForFragment {
-=======
+class MainActivity : AppCompatActivity() {
+/*=======
 import com.example.lifesum.R
->>>>>>> 2455951 (Setting):app/src/main/java/com/example/lifesum/view/MainActivity.kt
+>>>>>>> 2455951 (Setting):app/src/main/java/com/example/lifesum/view/MainActivity.kt*/
 
     private var goalType: Int = 0
     private var gender: String = ""
@@ -25,9 +25,9 @@ import com.example.lifesum.R
 //    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-<<<<<<< HEAD:app/src/main/java/com/example/lifesum/MainActivity.kt
+//<<<<<<< HEAD:app/src/main/java/com/example/lifesum/MainActivity.kt
         setContentView(R.layout.activity_main)
-        val diaryFragment = DiaryFragment(this)
+        val diaryFragment = DiaryFragment()
         supportFragmentManager.beginTransaction()
             .add(R.id.mainActivityFragmentContainer, diaryFragment)
             .commit()
@@ -49,15 +49,12 @@ import com.example.lifesum.R
 //        dbroot = FirebaseFirestore.getInstance()
 //        getUserDetailsFromServer()
 
-=======
+/*=======
         setContentView(R.layout.fragment_personal_details_setting)
->>>>>>> 2455951 (Setting):app/src/main/java/com/example/lifesum/view/MainActivity.kt
+>>>>>>> 2455951 (Setting):app/src/main/java/com/example/lifesum/view/MainActivity.kt*/
 
     }
 
-    override fun onCancelPressForFragment() {
-        onBackPressed()
-    }
 
 
 //    private fun getUserDetailsFromServer() {

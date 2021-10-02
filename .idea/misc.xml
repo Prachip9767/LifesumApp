@@ -3,18 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifesumApp/app/src/main/res/drawable/ccc.xml" value="0.262037037037037" />
-        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifesumApp/app/src/main/res/layout/activity_calander_fragment.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifesumApp/app/src/main/res/layout/activity_main.xml" value="0.19722222222222222" />
-        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifesumApp/app/src/main/res/layout/dummy_layout.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifesumApp/app/src/main/res/layout/fragment_calander.xml" value="0.1296875" />
-        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifesumApp/app/src/main/res/layout/fragment_d_iary.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/parde/AndroidStudioProjects/UnitFOurProject/app/src/main/res/drawable/add.xml" value="0.2703125" />
-        <entry key="..\:/Users/parde/AndroidStudioProjects/UnitFOurProject/app/src/main/res/drawable/ctr_bg.xml" value="0.2703125" />
-        <entry key="..\:/Users/parde/AndroidStudioProjects/UnitFOurProject/app/src/main/res/drawable/layout_bg.xml" value="0.2703125" />
-        <entry key="..\:/Users/parde/AndroidStudioProjects/UnitFOurProject/app/src/main/res/drawable/oval.xml" value="0.2703125" />
-        <entry key="..\:/Users/parde/AndroidStudioProjects/UnitFOurProject/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/parde/AndroidStudioProjects/UnitFOurProject/app/src/main/res/layout/fragment_d_iary.xml" value="0.25416666666666665" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/drawable/circle.xml" value="0.19583333333333333" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/drawable/custom_button.xml" value="0.19583333333333333" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/drawable/ic_baseline_attribution_24.xml" value="0.18611111111111112" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/drawable/ic_outline_favorite_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/drawable/img.xml" value="0.19583333333333333" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/font/font.xml" value="0.20666666666666667" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/activity_calander_fragment.xml" value="0.1796875" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/activity_main.xml" value="0.16574074074074074" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.17314814814814813" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/dummy_layout.xml" value="0.1388888888888889" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/fragment_calander.xml" value="0.1796875" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/fragment_choose_goal.xml" value="0.22" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/fragment_current_weight.xml" value="0.1796875" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/fragment_enter_height.xml" value="0.1388888888888889" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/fragment_personal_details_setting.xml" value="0.16666666666666666" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/fragment_profile_.xml" value="0.22" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/fragment_select_gender.xml" value="0.1796875" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/fragment_settings.xml" value="0.22" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/fragment_sign_up_with_account.xml" value="0.22" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/sample.xml" value="0.1796875" />
+        <entry key="..\:/Local Disk Sachin/LifeSum unit4/LifesumApp/app/src/main/res/layout/sample_layout.xml" value="0.1796875" />
+        <entry key="..\:/Users/Sachin Sharma/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/progress_dialog_holo.xml" value="0.1" />
+        <entry key="..\:/Users/Sachin Sharma/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/search_bar.xml" value="0.1" />
+        <entry key="..\:/Users/Sachin Sharma/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/typing_filter.xml" value="0.1" />
       </map>
     </option>
   </component>

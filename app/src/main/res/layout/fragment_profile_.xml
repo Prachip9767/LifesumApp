@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#f0f0e6"
-    tools:context=".ProfileFragment">
+    android:background="#f0f0e6">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -69,6 +67,7 @@
                     </LinearLayout>
 
                     <ImageView
+                        android:id="@+id/btn_settings"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_margin="40dp"
@@ -323,17 +322,17 @@
                             android:textColor="@color/black" />
 
                         <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
                             android:layout_margin="5dp"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                            app:strokeColor="#41ce8c"
                             android:backgroundTint="@color/white"
                             android:shadowColor="#41ce8c"
                             android:text="TAKE THE TEST"
                             android:textColor="#41ce8c"
-                            app:cornerRadius="37dp" />
+                            app:cornerRadius="37dp"
+                            app:strokeColor="#41ce8c" />
                     </LinearLayout>
 
                     <ImageView

@@ -78,8 +78,11 @@ dependencies {
     //Anko
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
 
+    implementation 'com.mikhaellopez:circularprogressbar:3.1.0'
+
+
     // ViewModel and LiveData
-    def arch_version = '2.2.0-alpha01'
+    def arch_version = '2.2.0'
     implementation "androidx.lifecycle:lifecycle-extensions:$arch_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$arch_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$arch_version"
@@ -87,6 +90,17 @@ dependencies {
     implementation("com.airbnb.android:lottie:4.1.0")
 
     implementation 'com.mikhaellopez:circularprogressbar:3.1.0'
+
+    implementation 'com.mikhaellopez:circularimageview:4.3.0'
+
+
+    implementation 'com.karumi:dexter:6.2.3'
+    implementation 'com.google.code.gson:gson:2.8.8'
+
+    implementation 'com.github.smarteist:autoimageslider:1.4.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+
 
     implementation 'com.mikhaellopez:circularimageview:4.3.0'
     implementation 'pl.rspective.pagerdatepicker:pagerdatepicker:1.2.0'

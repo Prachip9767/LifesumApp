@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.activites.MealRecordActivity">
+
+    <LinearLayout
+        android:id="@+id/top_layout_rc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/selected_green"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/selected_green"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/iv_back_btn_meal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/selected_green"
+                android:padding="12dp"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_act_type_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BREAKFAST"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/etMealSearchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="18dp"
+            android:background="@drawable/search_background"
+            android:drawablePadding="7dp"
+            android:hint="Search food"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:padding="@dimen/dp_12"
+            android:textColorHint="#546E7A"
+            android:textSize="@dimen/sp_15"
+            app:drawableStartCompat="@drawable/ic_search_24"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSearchFood"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_layout_rc"
+        tools:itemCount="4"
+        tools:listitem="@layout/meal_search_item_layout" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_meal_record"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        tools:listitem="@layout/meal_recoed_item_layout"
+        tools:itemCount="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_layout_rc" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,7 +29,7 @@ interface DAO {
 
     //fetch
     @Query("Select * from DashBoardTable")
-    fun getDashboardData(): LiveData<DashboardEntity>
+    fun getDashboardDataFromDb(): LiveData<DashboardEntity>
 
     @Query("Select * from DailyMealDataTable")
     fun getMealData(): LiveData<DailyMealData>

@@ -29,4 +29,8 @@ class LifeSumViewModel(val repo: Repo) : ViewModel() {
         repo.getDashboardDataFromServer()
     }
 
+    fun getDashboardDataFromDb(): LiveData<DashboardEntity> {
+        return repo.getDashboardDataFromDB()
+    }
+
 }

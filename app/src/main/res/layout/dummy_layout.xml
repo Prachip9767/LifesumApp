@@ -79,6 +79,7 @@
                         app:cpb_round_border="false" />
 
                     <TextView
+                        android:id="@+id/tv_eaten"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
@@ -99,6 +100,7 @@
                         android:textSize="20sp" />
 
                     <TextView
+                        android:id="@+id/tv_kacl_left"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="170dp"
@@ -118,6 +120,7 @@
                         android:textSize="20sp" />
 
                     <TextView
+                        android:id="@+id/tv_burned"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
@@ -139,6 +142,7 @@
                         android:textSize="20sp" />
 
                     <TextView
+                        android:id="@+id/tv_protein"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|bottom"
@@ -160,6 +164,7 @@
                         app:layout_collapseMode="parallax" />
 
                     <TextView
+                        android:id="@+id/tv_carbs"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|bottom|start"
@@ -183,6 +188,7 @@
                         app:layout_collapseMode="parallax" />
 
                     <TextView
+                        android:id="@+id/tv_fat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|bottom|end"

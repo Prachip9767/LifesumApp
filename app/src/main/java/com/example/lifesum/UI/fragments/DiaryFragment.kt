@@ -5,11 +5,13 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import com.example.lifesum.LocalDatabase.DAO
 import com.example.lifesum.LocalDatabase.MainRoomDB
 import com.example.lifesum.R
 import com.example.lifesum.UI.activites.onBackPressForFragment
-import com.example.lifesum.models.RecipeModel
+import com.example.lifesum.models.DailyMealData
+import com.example.lifesum.models.FoodItem
 import com.example.lifesum.repositary.Repo
 import com.example.lifesum.viewmodels.LifeSumViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -17,15 +19,18 @@ import com.google.firebase.database.*
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.dumy.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
-class DiaryFragment(val onBackPress: onBackPressForFragment) : Fragment(R.layout.dumy) {
+class DiaryFragment(val onBackPress: onBackPressForFragment) : Fragment(R.layout.dummy_layout) {
 
     private lateinit var roomDB: MainRoomDB
     private lateinit var dao: DAO
     private lateinit var repo: Repo
     private lateinit var viewModel: LifeSumViewModel
-    private var dataList = ArrayList<RecipeModel>()
+    private var dataList = ArrayList<FoodItem>()
 
     private var uid: String? = null
     lateinit var userRef: DocumentReference
@@ -51,6 +56,9 @@ class DiaryFragment(val onBackPress: onBackPressForFragment) : Fragment(R.layout
 //        Water4.setOnClickListener {
 //            Water4.playAnimation()
 //        }
+        viewModel.getDashboardDataFromDb().observe(this.requireActivity(), Observer {
+
+        })
         getDailyMealDataFromServer()
         setToTextView()
 
@@ -72,19 +80,19 @@ class DiaryFragment(val onBackPress: onBackPressForFragment) : Fragment(R.layout
 
         val dataListener = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val items = snapshot.children.map { it.getValue(RecipeModel::class.java)!! }
+                val items = snapshot.children.map { it.getValue(FoodItem::class.java)!! }
                 dataList.clear()
-                dataList = items as ArrayList<RecipeModel>
+                dataList = items as ArrayList<FoodItem>
 
-                Log.d("rkpsx7", dataList.size.toString())
+                Log.d("rkpsx7", dataList[0].toString())
                 val data = dataList[0]
-                tv_dumy.text = data.ingredients
+                tv_dumy.text = data.type
 
-                //val dailyMealData = DailyMealData("01-10-2021", "breakfast", dataList)
+                val dailyMealData = DailyMealData("01-10-2021", "breakfast", dataList)
 
-//                CoroutineScope(Dispatchers.IO).launch {
-//                    dao.insertToMealData(dailyMealData)
-//                }
+                CoroutineScope(Dispatchers.IO).launch {
+                    dao.insertToMealData(dailyMealData)
+                }
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -105,7 +113,7 @@ class DiaryFragment(val onBackPress: onBackPressForFragment) : Fragment(R.layout
         auth = FirebaseAuth.getInstance()
         dbroot = FirebaseFirestore.getInstance()
         uid = auth.currentUser?.uid
-        foodItemRef = db.getReference("Recipes")
+        foodItemRef = db.getReference("FoodItems")
     }
 
 }

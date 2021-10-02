@@ -5,11 +5,11 @@
     </item>
     <item
         android:bottom="0dp"
-        android:left="-120dp"
-        android:right="-120dp"
-        android:top="-80dp">
+        android:left="-136dp"
+        android:right="-136dp"
+        android:top="-90dp">
         <shape android:shape="oval">
-            <solid android:color="@color/selected_green" />
+            <solid android:color="#41ce8c" />
         </shape>
     </item>
 </layer-list>

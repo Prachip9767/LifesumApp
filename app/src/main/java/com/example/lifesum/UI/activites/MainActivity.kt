@@ -7,8 +7,10 @@ import androidx.fragment.app.Fragment
 import com.example.lifesum.LocalDatabase.DAO
 import com.example.lifesum.LocalDatabase.MainRoomDB
 import com.example.lifesum.R
+import com.example.lifesum.UI.RecipeListFragment
 import com.example.lifesum.UI.fragments.DiaryFragment
 import com.example.lifesum.UI.fragments.PlansFragment
+import com.example.lifesum.UI.fragments.ProfileFragment
 import com.example.lifesum.models.DailyMealData
 import com.example.lifesum.models.FoodItem
 import com.example.lifesum.repositary.Repo
@@ -102,7 +104,7 @@ class MainActivity : AppCompatActivity(), onBackPressForFragment {
                 R.id.menu_home -> temp = DiaryFragment(this)
                 R.id.menu_search -> temp = ProfileFragment()
                 R.id.menu_orders -> temp = PlansFragment()
-                R.id.menu_dunzo_cash -> temp = DiaryFragment(this)
+                R.id.menu_dunzo_cash -> temp = RecipeListFragment()
             }
             if (temp != null) {
                 supportFragmentManager.beginTransaction()

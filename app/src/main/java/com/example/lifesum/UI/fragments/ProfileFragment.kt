@@ -1,10 +1,11 @@
-package com.example.lifesum.UI.activites
+package com.example.lifesum.UI.fragments
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.lifesum.R
+import com.example.lifesum.UI.activites.SettingsActivity
 import kotlinx.android.synthetic.main.fragment_profile_.*
 
 

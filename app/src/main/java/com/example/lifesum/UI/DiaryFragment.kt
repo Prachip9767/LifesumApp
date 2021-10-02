@@ -9,7 +9,6 @@ import com.example.lifesum.R
 import com.google.android.gms.common.api.internal.LifecycleCallback.getFragment
 import com.google.android.material.datepicker.MaterialDatePicker
 import kotlinx.android.synthetic.main.dummy_layout.*
-import kotlinx.android.synthetic.main.sample.*
 import pl.rspective.pagerdatepicker.adapter.DatePagerFragmentAdapter
 import pl.rspective.pagerdatepicker.adapter.DefaultDateAdapter
 import pl.rspective.pagerdatepicker.view.RecyclerViewInsetDecoration

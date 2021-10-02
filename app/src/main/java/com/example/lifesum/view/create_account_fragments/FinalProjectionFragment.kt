@@ -1,4 +1,4 @@
-package com.example.lifesum.create_account_fragments
+package com.example.lifesum.view.create_account_fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

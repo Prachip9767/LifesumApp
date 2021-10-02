@@ -444,5 +444,18 @@
                     app:layout_constraintTop_toBottomOf="@+id/InstructionOne" />
             </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/lets_start"
+            style="@style/createAccountButton"
+            android:padding="17dp"
+            android:text="Track"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:cornerRadius="37dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/video_view_m" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

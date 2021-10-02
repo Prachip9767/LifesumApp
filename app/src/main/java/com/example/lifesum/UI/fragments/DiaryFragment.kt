@@ -1,7 +1,7 @@
 package com.example.lifesum.UI.fragments
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import com.example.lifesum.LocalDatabase.DAO
 import com.example.lifesum.LocalDatabase.MainRoomDB
 import com.example.lifesum.R
+import com.example.lifesum.UI.activites.MealRecordActivity
 import com.example.lifesum.UI.activites.onBackPressForFragment
 import com.example.lifesum.models.DailyMealData
 import com.example.lifesum.models.FoodItem
@@ -36,6 +37,8 @@ class DiaryFragment(val onBackPress: onBackPressForFragment) : Fragment(R.layout
     private lateinit var viewModel: LifeSumViewModel
     private var dataList = ArrayList<FoodItem>()
 
+    private var curr_date: String = ""
+
     private var uid: String? = null
     lateinit var userRef: DocumentReference
     lateinit var dashboardRef: DocumentReference
@@ -43,28 +46,41 @@ class DiaryFragment(val onBackPress: onBackPressForFragment) : Fragment(R.layout
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseDatabase
     private lateinit var foodItemRef: DatabaseReference
-
+    private var water_glasses: Int? = 0
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         initMV()
-//        Water.speed = 5F
-//        Water2.speed = 5F
-//        Water.setOnClickListener {
-//            Water.playAnimation()
-//        }
-//        Water2.setOnClickListener {
-//            Water2.playAnimation()
-//        }
-//        Water3.setOnClickListener {
-//            Water3.playAnimation()
-//        }
-//        Water4.setOnClickListener {
-//            Water4.playAnimation()
-//        }
-        viewModel.getDashboardDataFromDb().observe(this.requireActivity(), Observer {
+        initDate()
+        inflateDataToDashboard()
+        setGlasses()
+        //getDailyMealDataFromServer()
 
+        breakfast_section.setOnClickListener {
+            var intent = Intent(this.requireActivity(), MealRecordActivity::class.java)
+            intent.putExtra("foodType", "Breakfast")
+            startActivity(intent)
+        }
+    }
+
+    private fun setGlasses() {
+
+    }
+
+    private fun inflateDataToDashboard() {
+        viewModel.getDashboardDataFromDb(curr_date).observe(this.requireActivity(), Observer {
+            tv_eaten.text = it?.eaten.toString()
+            tv_carbs.text = it?.carbs.toString()
+            tv_burned.text = it?.burned.toString()
+            tv_fat.text = it?.fat.toString()
+            tv_protein.text = it?.protein.toString()
+            tv_kacl_left.text = it?.kacl.toString()
+            water_glasses = it?.water_glass
         })
-        getDailyMealDataFromServer()
+    }
 
+    private fun initDate() {
+
+        curr_date = SimpleDateFormat("EEEE, dd MMM", Locale.getDefault()).format(Date())
+        select_date.text = curr_date
         val materialDateBuilder: MaterialDatePicker.Builder<Long> =
             MaterialDatePicker.Builder.datePicker()
 
@@ -85,21 +101,8 @@ class DiaryFragment(val onBackPress: onBackPressForFragment) : Fragment(R.layout
             val date = Date(selection + offsetFromUTC)
             select_date.text = simpleFormat.format(date)
         }
-
-
-//        select_date.setOnClickListener {
-//            val calenderFragment = CalenderFragment(onBackPress)
-//            activity?.supportFragmentManager?.beginTransaction()
-//                ?.add(R.id.mainActivityFragmentContainer, calenderFragment)
-//                ?.addToBackStack("")
-//                ?.commit()
-//        }
-
     }
 
-    private fun setToTextView() {
-
-    }
 
     private fun getDailyMealDataFromServer() {
 
@@ -108,10 +111,6 @@ class DiaryFragment(val onBackPress: onBackPressForFragment) : Fragment(R.layout
                 val items = snapshot.children.map { it.getValue(FoodItem::class.java)!! }
                 dataList.clear()
                 dataList = items as ArrayList<FoodItem>
-
-                Log.d("rkpsx7", dataList[0].toString())
-//                val data = dataList[0]
-//                tv_dumy.text = data.type
 
                 val dailyMealData = DailyMealData("01-10-2021", "breakfast", dataList)
 
@@ -142,3 +141,18 @@ class DiaryFragment(val onBackPress: onBackPressForFragment) : Fragment(R.layout
     }
 
 }
+
+//        Water.speed = 5F
+//        Water2.speed = 5F
+//        Water.setOnClickListener {
+//            Water.playAnimation()
+//        }
+//        Water2.setOnClickListener {
+//            Water2.playAnimation()
+//        }
+//        Water3.setOnClickListener {
+//            Water3.playAnimation()
+//        }
+//        Water4.setOnClickListener {
+//            Water4.playAnimation()
+//        }

@@ -74,8 +74,8 @@ class Repo(private val dao: DAO) {
         }
     }
 
-    fun getDashboardDataFromDB(): LiveData<DashboardEntity> {
-        return dao.getDashboardDataFromDb()
+    fun getDashboardDataFromDB(date: String): LiveData<DashboardEntity> {
+        return dao.getDashboardDataFromDb(date)
     }
 
     fun getUserDetailsFromDB(): LiveData<UserEntity> {

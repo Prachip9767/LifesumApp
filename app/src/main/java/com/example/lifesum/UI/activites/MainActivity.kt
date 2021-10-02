@@ -77,7 +77,6 @@ class MainActivity : AppCompatActivity(), onBackPressForFragment {
         foodItemRef.addValueEventListener(dataListener)
     }
 
-
     private fun initMV() {
 //        roomDB = MainRoomDB.getMainRoomDb(this)
 //        dao = roomDB.getDao()

@@ -237,104 +237,168 @@
                         android:textStyle="bold" />
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/cardlay"
+                        android:id="@+id/Water_board"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/select_date"
                         android:layout_margin="10dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_margin="0dp"
-                            android:drawableEnd="@drawable/dots"
-                            android:text="0 L"
-                            android:textSize="25sp" />
-
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:text="Water"
-                            android:textSize="25sp" />
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:gravity="start"
+                                    android:text="Water"
+                                    android:textSize="25sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:gravity="start"
+                                    android:text="0 L"
+                                    android:textSize="25sp" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:id="@+id/Water_glasses"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_below="@+id/Water_board"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/Water1"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_marginTop="10dp"
+                                    android:visibility="invisible"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/app_bar"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="true"
+                                    app:lottie_rawRes="@raw/glass_fill" />
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/Water2"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_marginTop="10dp"
+                                    android:visibility="invisible"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/app_bar"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="true"
+                                    app:lottie_rawRes="@raw/glass_fill_reverse"
+                                    tools:ignore="NotSibling" />
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/Water3"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_marginTop="10dp"
+                                    android:visibility="invisible"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/app_bar"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="true"
+                                    app:lottie_rawRes="@raw/glass_fill"
+                                    tools:ignore="NotSibling" />
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/Water4"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_marginTop="10dp"
+                                    android:visibility="invisible"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/app_bar"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="true"
+                                    app:lottie_rawRes="@raw/glass_fill_reverse"
+                                    tools:ignore="NotSibling" />
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/Water5"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_marginTop="10dp"
+                                    android:visibility="invisible"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/app_bar"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="true"
+                                    app:lottie_rawRes="@raw/glass_fill_reverse"
+                                    tools:ignore="NotSibling" />
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/Water6"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_marginTop="10dp"
+                                    android:visibility="invisible"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/app_bar"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="true"
+                                    app:lottie_rawRes="@raw/glass_fill_reverse"
+                                    tools:ignore="NotSibling" />
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/Water7"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_marginTop="10dp"
+                                    android:visibility="invisible"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/app_bar"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="true"
+                                    app:lottie_rawRes="@raw/glass_fill_reverse"
+                                    tools:ignore="NotSibling" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
-
-                    <LinearLayout
-                        android:id="@+id/Linear"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_below="@id/cardlay"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:orientation="horizontal">
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/Water"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="10dp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/app_bar"
-                            app:lottie_autoPlay="true"
-                            app:lottie_loop="true"
-                            app:lottie_rawRes="@raw/glass_fill"
-                            tools:ignore="NotSibling" />
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/Water2"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="10dp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/app_bar"
-                            app:lottie_autoPlay="true"
-                            app:lottie_loop="true"
-                            app:lottie_rawRes="@raw/glass_fill_reverse"
-                            tools:ignore="NotSibling" />
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/Water3"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="10dp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/app_bar"
-                            app:lottie_autoPlay="true"
-                            app:lottie_loop="true"
-                            app:lottie_rawRes="@raw/glass_fill"
-                            tools:ignore="NotSibling" />
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/Water4"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="10dp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/app_bar"
-                            app:lottie_autoPlay="true"
-                            app:lottie_loop="true"
-                            app:lottie_rawRes="@raw/glass_fill_reverse"
-                            tools:ignore="NotSibling" />
-                    </LinearLayout>
 
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/card1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/Linear"
+                        android:layout_below="@id/Water_board"
                         android:layout_margin="20dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
+                            android:id="@+id/breakfast_section"
                             android:layout_height="wrap_content"
                             android:padding="10dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/add"
+                                android:src="@drawable/ic_plus_svgrepo_com"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -342,6 +406,7 @@
                                 android:id="@+id/animationView"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@id/app_bar"
                                 app:lottie_autoPlay="true"
@@ -386,7 +451,8 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/add"
+                                android:src="@drawable/ic_plus_svgrepo_com"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -394,6 +460,7 @@
                                 android:id="@+id/aniLaunch"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@id/app_bar"
                                 app:lottie_autoPlay="true"
@@ -438,7 +505,8 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/add"
+                                android:src="@drawable/ic_plus_svgrepo_com"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -446,6 +514,7 @@
                                 android:id="@+id/aniDinner"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@id/app_bar"
                                 app:lottie_autoPlay="true"
@@ -490,7 +559,8 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/add"
+                                android:src="@drawable/ic_plus_svgrepo_com"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -498,6 +568,7 @@
                                 android:id="@+id/aniSnack"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@id/app_bar"
                                 app:lottie_autoPlay="true"
@@ -541,7 +612,8 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/add"
+                                android:src="@drawable/ic_plus_svgrepo_com"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -549,6 +621,7 @@
                                 android:id="@+id/aniExercise"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@id/app_bar"
                                 app:lottie_autoPlay="true"

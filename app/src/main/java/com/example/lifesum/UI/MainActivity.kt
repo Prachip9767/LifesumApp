@@ -7,7 +7,7 @@ import android.view.animation.Animation
 import androidx.appcompat.app.AppCompatActivity
 import com.example.lifesum.R
 import com.smarteist.autoimageslider.SliderView
-import kotlinx.android.synthetic.main.fragment_d_iary.*
+
 import kotlinx.android.synthetic.main.fragment_plan.*
 
 
@@ -31,11 +31,12 @@ imageSliderView()
 
     private fun imageSliderView() {
         val imageList: ArrayList<String> = ArrayList()
-
-        imageList.add("https://www.linkpicture.com/q/3_308.jpg")
-        imageList.add("https://www.linkpicture.com/q/4_278.jpg")
-        imageList.add("https://www.linkpicture.com/q/5_287.jpg")
-
+        imageList.add("https://www.linkpicture.com/q/WhatsApp-Image-2021-10-02-at-5.36.24-PM.jpeg")
+        imageList.add("https://www.linkpicture.com/q/WhatsApp-Image-2021-10-02-at-3.17.38-PM-1.jpeg")
+        imageList.add("https://www.linkpicture.com/q/WhatsApp-Image-2021-10-02-at-3.17.38-PM-2.jpeg")
+        imageList.add("https://www.linkpicture.com/q/WhatsApp-Image-2021-10-02-at-3.17.38-PM-3.jpeg")
+        imageList.add("https://www.linkpicture.com/q/WhatsApp-Image-2021-10-02-at-3.17.38-PM-4.jpeg")
+        imageList.add("https://www.linkpicture.com/q/WhatsApp-Image-2021-10-02-at-3.17.38-PM-5.jpeg")
         setImageInSlider(imageList, imageSlider = imageSlider)
     }
     }

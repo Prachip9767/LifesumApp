@@ -22,8 +22,18 @@
         <item name="android:layout_marginBottom">27dp</item>
         <item name="android:backgroundTint">#41ce8c</item>
     </style>
-<style name="cardview">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">match_parent</item>
+<style name="CardViews">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="cardCornerRadius">5dp</item>
+    <item name="android:layout_margin">10dp</item>
 </style>
+    <style name="ImageViews">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/square</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="background">@drawable/edittext</item>
+    </style>
 </resources>
+

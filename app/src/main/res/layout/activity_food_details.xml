@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f9faf4"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ViewOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivItemImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/chocomousse"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_item_name_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="5dp"
+                    android:text="Banana and oat smoothie"
+                    android:textColor="#242424"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/ivItemImage" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="30dp">
+
+                <TextView
+                    android:id="@+id/tvInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="nutritional information"
+                    android:textAllCaps="true"
+                    android:textColor="#242424"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/tvPerserve"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Nutritional information (Per Serving)"
+                    android:textColor="#757575"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/tvInfo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPerserve">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:padding="5dp"
+                            android:text="Calories"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_kcal_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="55dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="23dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="73 kcal"
+                            android:textColor="#777777"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:padding="5dp"
+                            android:text="Protein"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_protein_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="55dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="23dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="73 g"
+                            android:textColor="#777777"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:padding="5dp"
+                            android:text="Carbs"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_carbs_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="55dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="23dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="73 g"
+                            android:textColor="#777777"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:padding="5dp"
+                            android:text="Fiber"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/tv_fiber_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="23dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="73 g"
+                            android:textColor="#777777"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:padding="5dp"
+                            android:text="Sugars"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/tv_sugars_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="23dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="73 g"
+                            android:textColor="#777777"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:padding="5dp"
+                            android:text="Fat"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_fat_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="55dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="23dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="73 g"
+                            android:textColor="#777777"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:padding="5dp"
+                            android:text="Saturated Fat"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/tv_sat_fat_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="23dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="73 g"
+                            android:textColor="#777777"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:padding="5dp"
+                            android:text="Unsaturated Fat"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/tv_unSat_fat_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="23dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="73 g"
+                            android:textColor="#777777"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivJar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvIngredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="15dp"
+                    android:drawableStart="@drawable/ic_jar"
+                    android:drawablePadding="15dp"
+                    android:padding="5dp"
+                    android:text="Ingredients"
+                    android:textAllCaps="true"
+                    android:textColor="#303030"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@id/ivJar"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvServe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="40dp"
+                    android:padding="3dp"
+                    android:text="4 serve"
+                    android:textColor="#757575"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toEndOf="@id/ivJar"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/Step1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:drawableStart="@drawable/svgcircle"
+                    android:drawablePadding="5dp"
+                    android:padding="15dp"
+                    android:text="4 sliced bananas "
+                    android:textColor="#252525"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/tvServe" />
+
+                <TextView
+                    android:id="@+id/Step2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:drawableStart="@drawable/svgcircle"
+                    android:drawablePadding="5dp"
+                    android:padding="15dp"
+                    android:text="1/2 cup / 45 old fashion rolled oats "
+                    android:textColor="#252525"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/Step1" />
+
+                <TextView
+                    android:id="@+id/Step3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:drawableStart="@drawable/svgcircle"
+                    android:drawablePadding="5dp"
+                    android:padding="15dp"
+                    android:text="4 cups / 960 ml unsweetened plant based milk "
+                    android:textColor="#252525"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/Step2" />
+
+                <TextView
+                    android:id="@+id/Step4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:drawableStart="@drawable/svgcircle"
+                    android:drawablePadding="5dp"
+                    android:padding="15dp"
+                    android:text="1 tsp sea salt"
+                    android:textColor="#252525"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/Step3" />
+
+                <TextView
+                    android:id="@+id/Step5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:drawableStart="@drawable/svgcircle"
+                    android:drawablePadding="5dp"
+                    android:padding="15dp"
+                    android:text="4 tbsp almond butter"
+                    android:textColor="#252525"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/Step4" />
+
+                <TextView
+                    android:id="@+id/Step6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:drawableStart="@drawable/svgcircle"
+                    android:drawablePadding="5dp"
+                    android:padding="15dp"
+                    android:text="2 cups / 280 gram raspberries"
+                    android:textColor="#252525"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/Step5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivInstruction"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvInstructions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="15dp"
+                    android:drawableStart="@drawable/ic_document_review_read_document_document_revision_read_instructions_svgrepo_com"
+                    android:drawablePadding="15dp"
+                    android:padding="5dp"
+                    android:text="Instructions"
+                    android:textAllCaps="true"
+                    android:textColor="#252525"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@id/ivInstruction"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/InstructionOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:drawableStart="@drawable/one"
+                    android:drawablePadding="10dp"
+                    android:padding="15dp"
+                    android:text="Add bananas, milk, oats, almond butter and sea salt in a blender and blend it together"
+                    android:textColor="#252525"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/tvInstructions" />
+
+                <TextView
+                    android:id="@+id/InstructionTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="150dp"
+                    android:drawableStart="@drawable/two"
+                    android:drawablePadding="10dp"
+                    android:padding="15dp"
+                    android:text="Mash raspberries and add it to a glass, Now pour the smoothie on the top"
+                    android:textColor="#252525"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@+id/InstructionOne" />
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/lets_start"
+            style="@style/createAccountButton"
+            android:padding="17dp"
+            android:text="Track"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:cornerRadius="37dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/video_view_m" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

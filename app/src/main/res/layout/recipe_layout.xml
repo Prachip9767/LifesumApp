@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.activites.RecipeActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/curve_toolbar_bg"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+
+            android:id="@+id/colapse_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/curve_toolbar_bg"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:toolbarId="@+id/collapsingToolbar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/curve_toolbar_bg"
+                android:paddingBottom="10dp"
+                app:layout_collapseMode="pin"
+                app:titleTextColor="@color/black" >
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/Water"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/recipe"
+                    tools:ignore="NotSibling" />
+                <EditText
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/edittext"
+                    android:drawableStart="@drawable/ic_baseline_search_24"
+                    android:hint="Find Recipes"
+                    android:padding="10dp"
+                    android:textColor="#1c1c1c"
+                    android:textColorHint="#797979"
+                    android:textSize="20sp"
+                    app:layout_collapseMode="none" />
+            </androidx.appcompat.widget.Toolbar>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/edittext"
+                android:padding="5dp"
+                android:text="Classic DIEting"
+                android:textAllCaps="true"
+                android:textColor="#41ce8c" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/titleHot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="WHAT'S HOT"
+                    android:textSize="20sp"
+                    android:textColor="#1c1c1c"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <HorizontalScrollView
+                    android:id="@+id/topscroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    app:layout_constraintTop_toBottomOf="@id/titleHot">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/greens"
+                                android:layout_width="350dp"
+                                android:layout_height="300dp"
+                                android:layout_margin="10dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/eatgreens"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:text="Eat your Greens"
+                                android:textColor="@color/white"
+                                android:textSize="30sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/greens"
+                                app:layout_constraintStart_toStartOf="@+id/greens" />
+
+                            <ImageView
+                                android:id="@+id/smoothie"
+                                android:layout_width="350dp"
+                                android:layout_height="300dp"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/square"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/smoothies"
+                                app:layout_constraintStart_toEndOf="@id/greens"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:text="Smoothie"
+                                android:textColor="@color/white"
+                                android:textSize="30sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/smoothie"
+                                app:layout_constraintStart_toStartOf="@+id/smoothie" />
+
+                            <ImageView
+                                android:id="@+id/salad"
+                                android:layout_width="350dp"
+                                android:layout_height="300dp"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/square"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/salad"
+                                app:layout_constraintStart_toEndOf="@id/smoothie"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:text="Salad"
+                                android:textColor="@color/white"
+                                android:textSize="30sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/salad"
+                                app:layout_constraintStart_toStartOf="@+id/salad" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:textColor="#1c1c1c"
+                    android:id="@+id/tvBreakfast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="BREAKFAST"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/topscroll" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="SEE ALL"
+                    android:textColor="#41ce8c"
+                    android:textSize="20sp"
+                    app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/topscroll" />
+
+                <HorizontalScrollView
+                    android:id="@+id/breakfastscroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="none"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBreakfast">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="200dp"
+                                android:layout_height="300dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivSmoothie"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:background="@drawable/square"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/bcpudding" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/ivSmoothie"
+                                    android:layout_margin="10dp"
+                                    android:text="Chia and banana pudding"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_margin="10dp"
+                                    android:text="238 KCAL"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="200dp"
+                                android:layout_height="300dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivpudding"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:background="@drawable/square"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/bbsmothie" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/ivpudding"
+                                    android:layout_margin="10dp"
+                                    android:text="Banana and balckberry smoothie "
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_margin="10dp"
+                                    android:text="312 KCAL"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="200dp"
+                                android:layout_height="300dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivKale"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:background="@drawable/square"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/chiaandkale" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/ivKale"
+                                    android:layout_margin="10dp"
+                                    android:text="Chia and kale power smoothie"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_margin="10dp"
+                                    android:text="314 KCAL"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="200dp"
+                                android:layout_height="300dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivPanckae"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:background="@drawable/square"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/pancakecereal" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/ivPanckae"
+                                    android:layout_margin="10dp"
+                                    android:text="Pancake cereal"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_margin="10dp"
+                                    android:text="306 KCAL"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/tvLaunch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="LAUNCH"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/breakfastscroll" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="SEE ALL"
+                    android:textColor="#41ce8c"
+                    android:textSize="20sp"
+                    app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/breakfastscroll" />
+
+                <HorizontalScrollView
+                    android:id="@+id/lunchScroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="none"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLaunch">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="200dp"
+                                android:layout_height="300dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivTuna"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:background="@drawable/square"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/tunaandpasta" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/ivTuna"
+                                    android:layout_margin="10dp"
+                                    android:text="Tuna and pasta salad"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_margin="10dp"
+                                    android:text="571 KCAL"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="200dp"
+                                android:layout_height="300dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivZucchini"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:background="@drawable/square"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/zukini" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/ivZucchini"
+                                    android:layout_margin="10dp"
+                                    android:text="Zesty zucchini spring salad"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_margin="10dp"
+                                    android:text="176 KCAL"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="200dp"
+                                android:layout_height="300dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivPotato"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:background="@drawable/square"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/sweetpateto" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/ivPotato"
+                                    android:layout_margin="10dp"
+                                    android:text="Roasted sweet potato and cucumber"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_margin="10dp"
+                                    android:text="155 KCAL"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="200dp"
+                                android:layout_height="300dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivEgg"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:background="@drawable/square"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/eggandavacado" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/ivEgg"
+                                    android:layout_margin="10dp"
+                                    android:text="Egg and avocado salad"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_margin="10dp"
+                                    android:text="477 KCAL"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/tvDinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="DINNER"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lunchScroll" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+                    android:text="SEE ALL"
+                    android:textColor="#41ce8c"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lunchScroll" />
+
+                <HorizontalScrollView
+                    android:id="@+id/Dinnerscroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="none"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDinner">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="200dp"
+                                android:layout_height="300dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivGrashoper"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:background="@drawable/square"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/grasshop" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/ivGrashoper"
+                                    android:layout_margin="10dp"
+                                    android:text="Grasshopper taco tray"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_margin="10dp"
+                                    android:text="543 KCAL"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="200dp"
+                                android:layout_height="300dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivMash"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:background="@drawable/square"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/potatosmash" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/ivMash"
+                                    android:layout_margin="10dp"
+                                    android:text="Potato mash"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_margin="10dp"
+                                    android:text="240 KCAL"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="200dp"
+                                android:layout_height="300dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivMashroom"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:background="@drawable/square"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/mashroom" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/ivMashroom"
+                                    android:layout_margin="10dp"
+                                    android:text="Creamy chicken pasta with mashroom"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_margin="10dp"
+                                    android:text="604 KCAL"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="200dp"
+                                android:layout_height="300dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivSalmon"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:background="@drawable/square"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/salmonpasta" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/ivSalmon"
+                                    android:layout_margin="10dp"
+                                    android:text="Oven baked salmon pasta"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_margin="10dp"
+                                    android:text="637 KCAL"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+
+                <TextView
+                    android:id="@+id/tvSnack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="SNACK"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Dinnerscroll" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+                    android:text="SEE ALL"
+                    android:textColor="#44d7a8"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Dinnerscroll" />
+
+                <HorizontalScrollView
+                    android:id="@+id/Snackscroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="none"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSnack">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="200dp"
+                                android:layout_height="300dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivHazelnut"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:background="@drawable/square"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/hazelnut" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/ivHazelnut"
+                                    android:layout_margin="10dp"
+                                    android:text="Hazelnut Chocolate spread"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="100 KCAL"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="200dp"
+                                android:layout_height="300dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivMousse"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:background="@drawable/square"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/chocomousse" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/ivMousse"
+                                    android:layout_margin="10dp"
+                                    android:text="Chocolate tofu mousse"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_margin="10dp"
+                                    android:text="347 KCAL"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="200dp"
+                                android:layout_height="300dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivPie"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:background="@drawable/square"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/applepie" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/ivPie"
+                                    android:layout_margin="10dp"
+                                    android:text="Apple pie"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_margin="10dp"
+                                    android:text="341 KCAL"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="200dp"
+                                android:layout_height="300dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivMuesli"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:background="@drawable/square"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/muesli" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/ivMuesli"
+                                    android:layout_margin="10dp"
+                                    android:text="Muesli power bites"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_margin="10dp"
+                                    android:text="113 KCAL"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

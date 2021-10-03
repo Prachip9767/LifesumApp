@@ -24,7 +24,7 @@ class MySliderImageAdapter() :
         val inflate: View = LayoutInflater.from(parent.context).inflate(R.layout.image_holder, null)
         return VH(inflate)
     }
-
+//
     override fun onBindViewHolder(viewHolder: VH, position: Int) {
         //load image into view
         Picasso.get().load(mSliderItems[position]).fit().into(viewHolder.imageView)

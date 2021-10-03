@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.lifesum.R
-import com.example.lifesum.UI.activites.MainActivity
+import com.example.lifesum.UI.activites. MainActivity
 import com.example.lifesum.models.DashboardEntity
 import com.example.lifesum.models.UserEntity
 import com.google.android.gms.auth.api.signin.GoogleSignIn

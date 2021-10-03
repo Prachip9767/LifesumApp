@@ -16,10 +16,17 @@
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+
+        <com.airbnb.lottie.LottieAnimationView
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ls_logo_round" />
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/spinning_logo"
+            />
 
         <TextView
             android:id="@+id/tv_tip_text"

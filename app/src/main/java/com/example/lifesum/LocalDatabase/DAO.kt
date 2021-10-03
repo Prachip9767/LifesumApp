@@ -37,4 +37,5 @@ interface DAO {
     //delete
     @Delete
     fun deleteMeal(mealObj: DailyMealData)
+
 }

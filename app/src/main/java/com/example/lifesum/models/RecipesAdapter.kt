@@ -23,7 +23,7 @@ class RecipesAdapter (val addModel: List<Recipes>, val recipesList: MutableList<
            holder.tvcalori.text=addModel.calori
 
         }
-//
+
         override fun getItemCount(): Int {
             return recipesList.size
         }

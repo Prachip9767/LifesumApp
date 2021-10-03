@@ -2,19 +2,14 @@ package com.example.lifesum.UI.create_acc_frags
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
-import com.example.lifesum.LocalDatabase.DAO
-import com.example.lifesum.LocalDatabase.MainRoomDB
 import com.example.lifesum.R
 import com.example.lifesum.UI.activites.MainActivity
 import com.example.lifesum.models.DashboardEntity
 import com.example.lifesum.models.UserEntity
-import com.example.lifesum.repositary.Repo
-import com.example.lifesum.viewmodels.LifeSumViewModel
-import com.example.lifesum.viewmodels.LifeSumViewModelFactory
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -30,13 +25,13 @@ class SignUpWithAccountFragment : Fragment(R.layout.fragment_sign_up_with_accoun
     private lateinit var googleSignInClient: GoogleSignInClient
     private var requestCodeGSignIn = 7;
     private lateinit var gAuth: FirebaseAuth
-    private lateinit var dbroot: FirebaseFirestore
+    private lateinit var fsRoot: FirebaseFirestore
 
-    private lateinit var roomDB: MainRoomDB
-    private lateinit var dao: DAO
-    private lateinit var repo: Repo
-    private lateinit var viewModel: LifeSumViewModel
-    private lateinit var viewModelFactory: LifeSumViewModelFactory
+//    private lateinit var roomDB: MainRoomDB
+//    private lateinit var dao: DAO
+//    private lateinit var repo: Repo
+//    private lateinit var viewModel: LifeSumViewModel
+//    private lateinit var viewModelFactory: LifeSumViewModelFactory
 
     private var goalType: Int = 0
     private lateinit var gender: String
@@ -46,14 +41,15 @@ class SignUpWithAccountFragment : Fragment(R.layout.fragment_sign_up_with_accoun
     private var height: Int = 0
     private var curr_weight: Int = 0
     private var goal_weight: Int = 0
+    private var curr_date = ""
 
 
-    override fun onStart() {
-        super.onStart()
-        val currentUser = gAuth.currentUser
-        if (currentUser != null)
-            startActivity(Intent(context, MainActivity::class.java))
-    }
+//    override fun onStart() {
+//        super.onStart()
+//        val currentUser = gAuth.currentUser
+//        if (currentUser != null)
+//            startActivity(Intent(context, MainActivity::class.java))
+//    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -70,14 +66,15 @@ class SignUpWithAccountFragment : Fragment(R.layout.fragment_sign_up_with_accoun
     }
 
     private fun initMV() {
-        roomDB = MainRoomDB.getMainRoomDb(this.requireActivity())
-        dao = roomDB.getDao()
-        repo = Repo(dao)
-        viewModelFactory = LifeSumViewModelFactory(repo)
-        viewModel = ViewModelProviders.of(this.requireActivity(), viewModelFactory)
-            .get(LifeSumViewModel::class.java)
+        //roomDB = MainRoomDB.getMainRoomDb(this.requireActivity())
+        // dao = roomDB.getDao()
+        //repo = Repo(dao)
+        //viewModelFactory = LifeSumViewModelFactory(repo)
+        // viewModel = ViewModelProviders.of(this.requireActivity(), viewModelFactory)
+        //     .get(LifeSumViewModel::class.java)
         gAuth = FirebaseAuth.getInstance()
-        dbroot = FirebaseFirestore.getInstance()
+        fsRoot = FirebaseFirestore.getInstance()
+        curr_date = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
     }
 
     private fun getDataFromPreviousFragments() {
@@ -116,6 +113,7 @@ class SignUpWithAccountFragment : Fragment(R.layout.fragment_sign_up_with_accoun
                 val account = task.getResult(ApiException::class.java)!!
                 firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
+                //Log.d("rkpsx7", "$e")
                 toast("Error in getting info :$e")
             }
         }
@@ -134,15 +132,30 @@ class SignUpWithAccountFragment : Fragment(R.layout.fragment_sign_up_with_accoun
                         height, curr_weight, goal_weight
                     )
 
-                    viewModel.addUserDetailsToServer(user)
-                    val date = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
-                    val dashboardData = DashboardEntity(date, 0, 0, 0, 0, 0, 0, 0)
-                    viewModel.addDashboardDataToServer(dashboardData)
+                    //viewModel.
+                    addUserDetailsToServer(user)
+
+                    val dashboardData = DashboardEntity(curr_date, 0, 0, 0, 0, 0, 0, 0)
+                    //viewModel.
+                    addDashboardDataToServer(dashboardData)
                     startActivity(Intent(context, MainActivity::class.java))
+
                 } else {
+                    Log.d("rkpsx7", "user")
                     toast("Sign in Failed")
                 }
             }
+    }
+
+    fun addUserDetailsToServer(user: UserEntity) {
+        val userUID = gAuth.currentUser?.uid
+        fsRoot.collection("Users").document(userUID!!).set(user)
+    }
+
+    fun addDashboardDataToServer(dsbData: DashboardEntity) {
+        val userUID = gAuth.currentUser?.uid
+        fsRoot.collection("Users").document(userUID!!)
+            .collection("Dashboard").document(curr_date).set(dsbData)
     }
 
     private fun toast(str: String) {

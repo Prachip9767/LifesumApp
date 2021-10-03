@@ -11,21 +11,17 @@ import com.example.lifesum.UI.RecipeListFragment
 import com.example.lifesum.UI.fragments.DiaryFragment
 import com.example.lifesum.UI.fragments.PlansFragment
 import com.example.lifesum.UI.fragments.ProfileFragment
-import com.example.lifesum.models.DailyMealData
 import com.example.lifesum.models.FoodItem
 import com.example.lifesum.repositary.Repo
 import com.example.lifesum.viewmodels.LifeSumViewModel
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import org.jetbrains.anko.toast
 
-class MainActivity : AppCompatActivity(), onBackPressForFragment {
+class MainActivity : AppCompatActivity() {
 
 
     private lateinit var roomDB: MainRoomDB
@@ -49,32 +45,37 @@ class MainActivity : AppCompatActivity(), onBackPressForFragment {
         bottomNavigation()
 
         //insertToDailyMealDB()
-        viewModel.getDashboardDataFromServer()//and add to room
+        Log.d("rkpsx7", "reached method")
+        viewModel.getDashboardDataFromServer() //and add to room
+
+        viewModel.getMealRecordsFromServer()
+
+
         viewModel.getUserDetailsFromServer()//and add to room
     }
 
-    private fun insertToDailyMealDB() {
-
-        val dataListener = object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val items = snapshot.children.map { it.getValue(FoodItem::class.java)!! }
-                dataList.clear()
-                dataList = items as ArrayList<FoodItem>
-
-                val dailyMealData = DailyMealData("01-10-2021", "breakfast", dataList)
-
-                CoroutineScope(Dispatchers.IO).launch {
-                    dao.insertToMealData(dailyMealData)
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                toast("Error in fetching data")
-            }
-        }
-
-        foodItemRef.addValueEventListener(dataListener)
-    }
+//    private fun insertToDailyMealDB() {
+//
+//        val dataListener = object : ValueEventListener {
+//            override fun onDataChange(snapshot: DataSnapshot) {
+//                val items = snapshot.children.map { it.getValue(FoodItem::class.java)!! }
+//                dataList.clear()
+//                dataList = items as ArrayList<FoodItem>
+//
+//                val dailyMealData = DailyMealData("01-10-2021", "breakfast", dataList)
+//
+//                CoroutineScope(Dispatchers.IO).launch {
+//                    dao.insertToMealData(dailyMealData)
+//                }
+//            }
+//
+//            override fun onCancelled(error: DatabaseError) {
+//                toast("Error in fetching data")
+//            }
+//        }
+//
+//        foodItemRef.addValueEventListener(dataListener)
+//    }
 
     private fun initMV() {
         roomDB = MainRoomDB.getMainRoomDb(this)
@@ -95,12 +96,12 @@ class MainActivity : AppCompatActivity(), onBackPressForFragment {
 
     private fun bottomNavigation() {
         supportFragmentManager.beginTransaction()
-            .add(R.id.mainActivityFragmentContainer, DiaryFragment(this))
+            .add(R.id.mainActivityFragmentContainer, DiaryFragment())
             .commit()
         botton_navigation.setOnItemSelectedListener { item ->
             var temp: Fragment? = null
             when (item.itemId) {
-                R.id.menu_home -> temp = DiaryFragment(this)
+                R.id.menu_home -> temp = DiaryFragment()
                 R.id.menu_search -> temp = ProfileFragment()
                 R.id.menu_orders -> temp = PlansFragment()
                 R.id.menu_dunzo_cash -> temp = RecipeListFragment()
@@ -119,9 +120,6 @@ class MainActivity : AppCompatActivity(), onBackPressForFragment {
         Log.d("rkpsx7", str)
     }
 
-    override fun onCancelPressForFragment() {
-        onBackPressed()
-    }
 }
 //    private fun getUserDetailsFromGoogle() {
 //        var account = GoogleSignIn.getLastSignedInAccount(this)

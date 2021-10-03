@@ -13,9 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lifesum">
         <activity
+            android:name=".UI.activites.FoodDetailsActivity"
+            android:exported="true" />
+        <activity
             android:name=".UI.activites.MealRecordActivity"
-            android:exported="true"
-            tools:ignore="Instantiatable" />
+            android:exported="true" />
         <activity
             android:name=".UI.activites.UserDetailsActivity"
             android:exported="true" />
@@ -42,7 +44,7 @@
         </activity>
         <activity
             android:name=".UI.activites.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

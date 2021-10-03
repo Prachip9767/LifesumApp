@@ -3,41 +3,36 @@ package com.example.lifesum.UI.fragments
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.example.lifesum.LocalDatabase.DAO
 import com.example.lifesum.LocalDatabase.MainRoomDB
 import com.example.lifesum.R
 import com.example.lifesum.UI.activites.MealRecordActivity
-import com.example.lifesum.UI.activites.onBackPressForFragment
-import com.example.lifesum.models.DailyMealData
 import com.example.lifesum.models.FoodItem
 import com.example.lifesum.repositary.Repo
 import com.example.lifesum.viewmodels.LifeSumViewModel
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_diary.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
 
-class DiaryFragment(val onBackPress: onBackPressForFragment) : Fragment(R.layout.fragment_diary) {
+class DiaryFragment : Fragment(R.layout.fragment_diary) {
 
     private lateinit var roomDB: MainRoomDB
     private lateinit var dao: DAO
     private lateinit var repo: Repo
     private lateinit var viewModel: LifeSumViewModel
-    private var dataList = ArrayList<FoodItem>()
 
     private var curr_date: String = ""
+    private var dsh_date: String = ""
 
     private var uid: String? = null
     lateinit var userRef: DocumentReference
@@ -51,14 +46,46 @@ class DiaryFragment(val onBackPress: onBackPressForFragment) : Fragment(R.layout
         initMV()
         initDate()
         inflateDataToDashboard()
+        setSectionClicks()
         setGlasses()
-        //getDailyMealDataFromServer()
 
+    }
+
+    private fun setSectionClicks() {
         breakfast_section.setOnClickListener {
-            var intent = Intent(this.requireActivity(), MealRecordActivity::class.java)
+            val intent = Intent(this.requireActivity(), MealRecordActivity::class.java)
             intent.putExtra("foodType", "Breakfast")
+            intent.putExtra("curr_date", dsh_date)
             startActivity(intent)
         }
+        lunchSection.setOnClickListener {
+            val intent = Intent(this.requireActivity(), MealRecordActivity::class.java)
+            intent.putExtra("foodType", "Lunch")
+            intent.putExtra("curr_date", dsh_date)
+            startActivity(intent)
+        }
+
+        dinnerSection.setOnClickListener {
+            val intent = Intent(this.requireActivity(), MealRecordActivity::class.java)
+            intent.putExtra("foodType", "Dinner")
+            intent.putExtra("curr_date", dsh_date)
+            startActivity(intent)
+        }
+
+        snackSection.setOnClickListener {
+            val intent = Intent(this.requireActivity(), MealRecordActivity::class.java)
+            intent.putExtra("foodType", "Snack")
+            intent.putExtra("curr_date", dsh_date)
+            startActivity(intent)
+        }
+
+        exerciseSection.setOnClickListener {
+            val intent = Intent(this.requireActivity(), MealRecordActivity::class.java)
+            intent.putExtra("foodType", "Exercise")
+            intent.putExtra("curr_date", dsh_date)
+            startActivity(intent)
+        }
+
     }
 
     private fun setGlasses() {
@@ -66,7 +93,7 @@ class DiaryFragment(val onBackPress: onBackPressForFragment) : Fragment(R.layout
     }
 
     private fun inflateDataToDashboard() {
-        viewModel.getDashboardDataFromDb(curr_date).observe(this.requireActivity(), Observer {
+        viewModel.getDashboardDataFromDb(dsh_date).observe(this.requireActivity(), Observer {
             tv_eaten.text = it?.eaten.toString()
             tv_carbs.text = it?.carbs.toString()
             tv_burned.text = it?.burned.toString()
@@ -78,6 +105,7 @@ class DiaryFragment(val onBackPress: onBackPressForFragment) : Fragment(R.layout
     }
 
     private fun initDate() {
+        dsh_date = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
 
         curr_date = SimpleDateFormat("EEEE, dd MMM", Locale.getDefault()).format(Date())
         select_date.text = curr_date
@@ -104,28 +132,30 @@ class DiaryFragment(val onBackPress: onBackPressForFragment) : Fragment(R.layout
     }
 
 
-    private fun getDailyMealDataFromServer() {
-
-        val dataListener = object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val items = snapshot.children.map { it.getValue(FoodItem::class.java)!! }
-                dataList.clear()
-                dataList = items as ArrayList<FoodItem>
-
-                val dailyMealData = DailyMealData("01-10-2021", "breakfast", dataList)
-
-                CoroutineScope(Dispatchers.IO).launch {
-                    dao.insertToMealData(dailyMealData)
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        foodItemRef.addValueEventListener(dataListener)
-    }
+//    private fun getDailyMealDataFromServer() {
+//
+//        val dataListener = object : ValueEventListener {
+//            override fun onDataChange(snapshot: DataSnapshot) {
+//                val items = snapshot.children.map { it.getValue(FoodItem::class.java)!! }
+//                dataList.clear()
+//                dataList = items as ArrayList<FoodItem>
+//
+//                val dailyMealData = DailyMealData()
+//                dailyMealData.date = "01-10-2021"
+//                dailyMealData.
+//
+//                CoroutineScope(Dispatchers.IO).launch {
+//                    dao.insertToMealData(dailyMealData)
+//                }
+//            }
+//
+//            override fun onCancelled(error: DatabaseError) {
+//                Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
+//            }
+//        }
+//
+//        foodItemRef.addValueEventListener(dataListener)
+//    }
 
     private fun initMV() {
         roomDB = MainRoomDB.getMainRoomDb(this.requireActivity())

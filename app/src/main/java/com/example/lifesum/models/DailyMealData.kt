@@ -1,21 +1,20 @@
 package com.example.lifesum.models
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import androidx.room.TypeConverter
+import androidx.room.*
 import com.google.gson.Gson
 
 @Entity(tableName = "DailyMealDataTable")
 class DailyMealData(
-    @ColumnInfo(name = "date") var date: String,
-    @ColumnInfo(name = "type") var type: String,
-    @ColumnInfo(name = "Item") var item: List<FoodItem>
-) {
+    @ColumnInfo(name = "date")
+    var date: String = "",
+
     @PrimaryKey
-    @ColumnInfo(name = "id")
-    var id: Int? = null
-}
+    @ColumnInfo(name = "type")
+    var type: String = "",
+
+    @ColumnInfo(name = "Item")
+    var item: List<FoodItem>? = null
+)
 
 class FoodItemTypeConverter {
     @TypeConverter

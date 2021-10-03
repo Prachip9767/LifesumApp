@@ -446,6 +446,7 @@
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:id="@+id/dinnerSection"
                             android:padding="10dp">
 
                             <ImageView
@@ -500,6 +501,7 @@
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:id="@+id/snackSection"
                             android:padding="10dp">
 
                             <ImageView
@@ -553,6 +555,7 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
+                            android:id="@+id/exerciseSection"
                             android:layout_height="wrap_content"
                             android:padding="10dp">
 
@@ -606,6 +609,7 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
+                            android:id="@+id/lunchSection"
                             android:layout_height="wrap_content"
                             android:padding="10dp">
 

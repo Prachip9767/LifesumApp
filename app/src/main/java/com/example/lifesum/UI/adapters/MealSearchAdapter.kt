@@ -4,14 +4,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.lifesum.LocalDatabase.onMealSearchItemClicked
 import com.example.lifesum.R
 import com.example.lifesum.models.FoodItem
 import kotlinx.android.synthetic.main.meal_search_item_layout.view.*
 
-class MealSearchAdapter(var dataList: ArrayList<FoodItem>) :
+class MealSearchAdapter(
+    var dataList: ArrayList<FoodItem>,
+    private val onMealSearchItemClicked: onMealSearchItemClicked
+) :
     RecyclerView.Adapter<MealSearchViewHolder>() {
+
     var backupList = ArrayList<FoodItem>()
 
     init {
@@ -27,6 +33,12 @@ class MealSearchAdapter(var dataList: ArrayList<FoodItem>) :
     override fun onBindViewHolder(holder: MealSearchViewHolder, position: Int) {
         val item = dataList[position]
         holder.setData(item)
+
+        holder.btn_add_meal_from_search.setOnClickListener {
+            onMealSearchItemClicked.onMealSearchItemClicked(item)
+            holder.btn_add_meal_from_search.setImageResource(R.drawable.ic_checked_tick)
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -67,6 +79,9 @@ class MealSearchAdapter(var dataList: ArrayList<FoodItem>) :
 }
 
 class MealSearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+    var btn_add_meal_from_search: ImageView = itemView.findViewById(R.id.btn_add_meal_from_search)
+
     fun setData(mealItem: FoodItem) {
         itemView.apply {
             Glide.with(iv_search_meal_image).load(mealItem.img_url).into(iv_search_meal_image)

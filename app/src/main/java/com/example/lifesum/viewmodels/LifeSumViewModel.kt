@@ -2,6 +2,7 @@ package com.example.lifesum.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import com.example.lifesum.models.DailyMealData
 import com.example.lifesum.models.DashboardEntity
 import com.example.lifesum.models.UserEntity
 import com.example.lifesum.repositary.Repo
@@ -13,8 +14,24 @@ class LifeSumViewModel(val repo: Repo) : ViewModel() {
         repo.addUserDetailsToServer(user)
     }
 
-    fun addDashboardDataToServer(dsbData: DashboardEntity) {
-        repo.addDashboardDataToServer(dsbData)
+    fun addMealRecordsToServer(date: String,record: DailyMealData) {
+        repo.addMealRecordsToServer(date,  record)
+    }
+
+    fun getUserMealRecordFromDB(date: String, type: String): LiveData<DailyMealData> {
+        return repo.getUserMealRecordFromDB(date, type)
+    }
+
+    fun insertMealRecordsToDB(mealRecord: DailyMealData) {
+        repo.insertMealRecordsToDB(mealRecord)
+    }
+
+    fun getMealRecordsFromServer() {
+        repo.getMealRecordsFromServer()
+    }
+
+    fun addDashboardDataToServer(dsbData: DashboardEntity, date: String) {
+        repo.addDashboardDataToServer(dsbData, date)
     }
 
     fun getUserDetailsFromServer() {

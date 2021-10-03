@@ -50,7 +50,7 @@
             android:hint="Search food"
             android:importantForAutofill="no"
             android:inputType="text"
-            android:padding="@dimen/dp_10"
+            android:padding="10dp"
             android:textColorHint="#546E7A"
             android:textSize="@dimen/sp_15"
             app:drawableStartCompat="@drawable/ic_search_24"/>

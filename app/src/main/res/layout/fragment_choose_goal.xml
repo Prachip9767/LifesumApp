@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:backgroundTint="@color/white"
@@ -17,16 +16,10 @@
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.airbnb.lottie.LottieAnimationView
-            app:layout_constraintTop_toTopOf="parent"
+        <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_gravity="center"
-            app:layout_constraintStart_toStartOf="parent"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/spinning_logo"
-            />
+            android:src="@drawable/ls_logo_round" />
 
         <TextView
             android:id="@+id/tv_tip_text"
@@ -46,6 +39,7 @@
         android:id="@+id/tv_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/top_layout_tip"
         android:layout_marginTop="22dp"
         android:layout_marginBottom="12dp"
         android:gravity="center"
@@ -57,79 +51,51 @@
         app:layout_constraintTop_toBottomOf="@id/top_layout_tip" />
 
     <LinearLayout
+        android:id="@+id/middle_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        app:layout_constraintBottom_toTopOf="@+id/tv_privacy_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_question">
 
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tv_lose_weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_margin="12dp"
+            android:background="@drawable/button_default_effect"
+            android:gravity="center"
+            android:padding="33dp"
+            android:text="LOSE WEIGHT"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
-            <ImageView
-                android:layout_width="121dp"
-                android:layout_height="106dp"
-                android:padding="20dp"
-                android:src="@drawable/illustration_loose" />
-
-            <TextView
-                android:layout_gravity="center"
-                android:id="@+id/tv_lose_weight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:text="LOSE WEIGHT"
-                android:textColor="@color/black"
-                android:textSize="23sp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/tv_maintain_weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_margin="12dp"
+            android:background="@drawable/button_default_effect"
+            android:gravity="center"
+            android:padding="33dp"
+            android:text="MAINTAIN WEIGHT"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
 
-
-            <ImageView
-                android:layout_width="121dp"
-                android:layout_height="106dp"
-                android:padding="20dp"
-                android:src="@drawable/illustration_maintain" />
-
-            <TextView
-                android:id="@+id/tv_maintain_weight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:layout_gravity="center"
-                android:text="MAINTAIN WEIGHT"
-                android:textColor="@color/black"
-                android:textSize="23sp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/tv_gain_weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <ImageView
-                android:layout_width="121dp"
-                android:layout_height="106dp"
-                android:padding="20dp"
-                android:src="@drawable/abc" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="12dp"
-                android:text="GAIN WEIGHT"
-                android:textColor="@color/black"
-                android:textSize="23sp" />
-        </LinearLayout>
+            android:layout_margin="12dp"
+            android:background="@drawable/button_default_effect"
+            android:gravity="center"
+            android:padding="33dp"
+            android:text="GAIN WEIGHT"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
     </LinearLayout>
 
     <TextView
@@ -157,4 +123,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

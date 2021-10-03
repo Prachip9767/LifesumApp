@@ -67,13 +67,12 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
+
                         <com.mikhaellopez.circularprogressbar.CircularProgressBar
                             android:id="@+id/circularProgressBar"
                             android:layout_width="148dp"
                             android:layout_height="149dp"
-                            android:layout_marginStart="80dp"
                             android:textAlignment="center"
-                            android:layout_marginTop="30dp"
                             android:textAllCaps="true"
                             app:cpb_background_progressbar_color="#88d8c0"
                             app:cpb_background_progressbar_width="5dp"
@@ -81,94 +80,121 @@
                             app:cpb_progressbar_color="#f2f3f4"
                             app:cpb_progressbar_width="10dp"
                             app:cpb_round_border="false"
-                            app:layout_constraintStart_toEndOf="@id/tv_eaten"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:id="@+id/tv_eaten"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="55dp"
-                            android:layout_marginTop="90dp"
-                            android:scaleType="centerCrop"
-                            android:text="0"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textSize="15sp"
-                            app:layout_constraintBottom_toTopOf="@id/eaten"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:id="@+id/eaten"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="40dp"
-                            android:scaleType="centerCrop"
-                            android:text="@string/eaten"
-                            android:textAllCaps="true"
-                            android:textColor="@color/white"
-                            android:textSize="15sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tv_eaten" />
-
-                        <TextView
-                            android:id="@+id/tv_kacl_left"
-                            android:textAlignment="center"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="80dp"
-                            android:layout_marginStart="65dp"
-                            android:scaleType="centerCrop"
-                            android:layout_marginEnd="50dp"
-                            android:text="0"
-                            android:textColor="@color/white"
-                            android:textSize="15sp"
-                            app:layout_constraintStart_toStartOf="@id/circularProgressBar"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            app:layout_constraintStart_toStartOf="@id/circularProgressBar"
-                            app:layout_constraintTop_toBottomOf="@id/tv_kacl_left"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:scaleType="centerCrop"
-                            android:layout_marginStart="40dp"
-                            android:text="@string/kcal_left"
-                            android:textColor="@color/white"
-                            android:textSize="15sp" />
-
-                        <TextView
-                            android:textAlignment="center"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            android:id="@+id/tv_burned"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:layout_editor_absoluteY="30dp" />
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="80dp"
-                            android:layout_marginEnd="70dp"
-                            android:text="0"
-                            android:textColor="@color/white"
-                            android:textSize="15sp" />
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toTopOf="@+id/tv_protein"
+                            app:layout_constraintEnd_toStartOf="@+id/circularProgressBar"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
 
-                        <TextView
-                            app:layout_constraintTop_toBottomOf="@id/tv_burned"
+                            <TextView
+                                android:id="@+id/tv_eaten"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:scaleType="centerCrop"
+                                android:text="0"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                app:layout_constraintEnd_toStartOf="@+id/circularProgressBar"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:layout_editor_absoluteY="80dp" />
+
+                            <TextView
+                                android:id="@+id/eaten"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:scaleType="centerCrop"
+                                android:text="@string/eaten"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                app:layout_constraintEnd_toStartOf="@+id/circularProgressBar"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:layout_editor_absoluteY="100dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="@+id/circularProgressBar"
+                            app:layout_constraintEnd_toEndOf="@+id/circularProgressBar"
+                            app:layout_constraintStart_toStartOf="@+id/circularProgressBar"
+                            app:layout_constraintTop_toTopOf="@+id/circularProgressBar">
+
+
+                            <TextView
+                                android:id="@+id/tv_kacl_left"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:scaleType="centerCrop"
+                                android:text="0"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                tools:layout_editor_absoluteX="197dp"
+                                tools:layout_editor_absoluteY="80dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:scaleType="centerCrop"
+                                android:text="@string/kcal_left"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                tools:layout_editor_absoluteX="172dp"
+                                tools:layout_editor_absoluteY="129dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toTopOf="@+id/tv_fat"
                             app:layout_constraintEnd_toEndOf="parent"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="40dp"
-                            android:layout_marginStart="40dp"
-                            android:text="@string/burned"
-                            android:textAllCaps="true"
-                            android:textColor="@color/white"
-                            android:textSize="15sp"
-                            app:layout_constraintStart_toEndOf="@id/circularProgressBar"
-                            tools:layout_editor_absoluteY="107dp"
-                            tools:ignore="MissingConstraints" />
+                            app:layout_constraintStart_toEndOf="@+id/circularProgressBar"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/tv_burned"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/circularProgressBar"
+                                tools:layout_editor_absoluteY="80dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/burned"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/circularProgressBar"
+                                tools:ignore="MissingConstraints"
+                                tools:layout_editor_absoluteY="100dp" />
+                        </LinearLayout>
 
                         <TextView
-                            app:layout_constraintBottom_toTopOf="@id/tv_protein_num"
                             android:id="@+id/tv_protein"
                             android:layout_width="6dp"
                             android:layout_height="17dp"
@@ -178,28 +204,25 @@
                             android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_collapseMode="parallax"
-                            app:layout_constraintStart_toStartOf="parent"
-                            />
+                            app:layout_constraintBottom_toTopOf="@id/tv_protein_num"
+                            app:layout_constraintStart_toStartOf="parent" />
 
                         <TextView
-                            android:layout_marginBottom="70dp"
                             android:id="@+id/tv_protein_num"
-                            app:layout_constraintStart_toStartOf="parent"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="50dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
                             android:layout_marginTop="100dp"
+                            android:layout_marginBottom="70dp"
                             android:text="@string/protein"
                             android:textAllCaps="true"
                             android:textColor="@color/white"
                             android:textSize="15sp"
-                            app:layout_collapseMode="parallax" />
+                            app:layout_collapseMode="parallax"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
 
                         <TextView
-                            app:layout_constraintStart_toStartOf="@id/circularProgressBar"
-                            app:layout_constraintBottom_toTopOf="@id/carbs"
-                            app:layout_constraintStart_toEndOf="@id/tv_protein_num"
                             android:id="@+id/tv_carbs"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -208,12 +231,13 @@
                             android:text="0"
                             android:textColor="@color/white"
                             android:textSize="15sp"
-                            app:layout_collapseMode="parallax" />
+                            app:layout_collapseMode="parallax"
+                            app:layout_constraintBottom_toTopOf="@id/carbs"
+                            app:layout_constraintStart_toEndOf="@id/tv_protein_num"
+                            app:layout_constraintStart_toStartOf="@id/circularProgressBar" />
 
                         <TextView
                             android:id="@+id/carbs"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="@id/circularProgressBar"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center|start"
@@ -221,15 +245,15 @@
                             android:layout_marginBottom="70dp"
                             android:scaleType="centerCrop"
                             android:text="@string/carbs"
-                            android:textAllCaps="true"
                             android:textAlignment="center"
+                            android:textAllCaps="true"
                             android:textColor="@color/white"
                             android:textSize="15sp"
-                            app:layout_collapseMode="parallax" />
+                            app:layout_collapseMode="parallax"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/circularProgressBar" />
 
                         <TextView
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintBottom_toTopOf="@id/fat"
                             android:id="@+id/tv_fat"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -237,21 +261,23 @@
                             android:text="0"
                             android:textColor="@color/white"
                             android:textSize="15sp"
-                            app:layout_collapseMode="parallax" />
+                            app:layout_collapseMode="parallax"
+                            app:layout_constraintBottom_toTopOf="@id/fat"
+                            app:layout_constraintEnd_toEndOf="parent" />
 
                         <TextView
                             android:id="@+id/fat"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="70dp"
                             android:layout_marginEnd="80dp"
+                            android:layout_marginBottom="70dp"
                             android:text="@string/fat"
                             android:textAllCaps="true"
                             android:textColor="@color/white"
                             android:textSize="15sp"
-                            app:layout_collapseMode="parallax" />
+                            app:layout_collapseMode="parallax"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -819,55 +845,55 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical">
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical">-->
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="30dp"
-                                android:layout_marginBottom="30dp"
-                                android:gravity="center"
-                                android:text="Life Score"
-                                android:textColor="#242424"
-                                android:textSize="30sp" />
+<!--                            <TextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="30dp"-->
+<!--                                android:layout_marginBottom="30dp"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="Life Score"-->
+<!--                                android:textColor="#242424"-->
+<!--                                android:textSize="30sp" />-->
 
-                            <ImageView
-                                android:layout_width="203dp"
-                                android:layout_height="146dp"
-                                android:src="@drawable/new_user" />
+<!--                            <ImageView-->
+<!--                                android:layout_width="203dp"-->
+<!--                                android:layout_height="146dp"-->
+<!--                                android:src="@drawable/new_user" />-->
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="30dp"
-                                android:gravity="center"
-                                android:text=""
-                                android:textColor="#242424"
-                                android:textSize="20sp" />
+<!--                            <TextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="30dp"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text=""-->
+<!--                                android:textColor="#242424"-->
+<!--                                android:textSize="20sp" />-->
 
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/quizeDiary"
-                                style="@style/createAccountButton"
-                                android:padding="17dp"
-                                android:text="Take a Quize"
-                                android:textAllCaps="true"
-                                android:textColor="@color/white"
-                                android:textSize="15sp"
-                                app:cornerRadius="37dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@id/video_view_m" />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
+<!--                            <com.google.android.material.button.MaterialButton-->
+<!--                                android:id="@+id/quizeDiary"-->
+<!--                                style="@style/createAccountButton"-->
+<!--                                android:padding="17dp"-->
+<!--                                android:text="Take a Quize"-->
+<!--                                android:textAllCaps="true"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textSize="15sp"-->
+<!--                                app:cornerRadius="37dp"-->
+<!--                                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toBottomOf="@id/video_view_m" />-->
+<!--                        </LinearLayout>-->
+<!--                    </androidx.cardview.widget.CardView>-->
 
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>

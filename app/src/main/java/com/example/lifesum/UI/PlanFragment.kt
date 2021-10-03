@@ -2,11 +2,8 @@ package com.example.lifesum.UI
 
 import MySliderImageAdapter
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-
 import android.view.View
-import androidx.recyclerview.widget.LinearLayoutManager
-
+import androidx.fragment.app.Fragment
 import com.example.lifesum.R
 import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.fragment_plan.*

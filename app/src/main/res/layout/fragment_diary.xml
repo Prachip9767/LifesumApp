@@ -264,6 +264,7 @@
                                 android:layout_height="wrap_content">
 
                                 <TextView
+                                    android:textColor="@color/black"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
@@ -271,6 +272,8 @@
                                     android:textSize="30sp" />
 
                                 <TextView
+                                    android:layout_marginEnd="@dimen/dp_20"
+                                    android:textColor="@color/black"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignParentEnd="true"

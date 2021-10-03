@@ -29,7 +29,7 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_margin="25dp"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/profile_image" />
 
 
                     <LinearLayout
@@ -50,6 +50,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/norms_pro_normal"
                             android:text="Lose Weight· Standard"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
@@ -98,7 +99,7 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/ic_baseline_attribution_24" />
+                            android:src="@drawable/ic_body" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -128,7 +129,7 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/ic_outline_pie_chart_24" />
+                            android:src="@drawable/ic_chart" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -158,7 +159,7 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/ic_outline_favorite_24" />
+                            android:src="@drawable/ic_heart" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -185,19 +186,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:weightSum="4">
+                    android:weightSum="5">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:weightSum="4">
+                        android:weightSum="5">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
-                            android:layout_weight="4"
+                            android:layout_weight="5"
                             android:gravity="center"
 
                             android:text="Streaks"
@@ -488,7 +489,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
-                        android:src="@drawable/premium_top_image" />
+                        android:src="@drawable/sharing" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

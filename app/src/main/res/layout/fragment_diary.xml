@@ -138,7 +138,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:scaleType="centerCrop"
-                                android:text="0"
+                                android:text="2044"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="15sp"

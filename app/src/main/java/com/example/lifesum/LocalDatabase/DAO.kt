@@ -28,7 +28,7 @@ interface DAO {
     fun insertToMealData(mealData: DailyMealData)
 
     //fetch
-    @Query("Select * from DashBoardTable where date like :date")
+    @Query("Select * from DashBoardTable where date= :date")
     fun getDashboardDataFromDb(date: String): LiveData<DashboardEntity>
 
     @Query("Select * from DailyMealDataTable where type =:type and date =:date")

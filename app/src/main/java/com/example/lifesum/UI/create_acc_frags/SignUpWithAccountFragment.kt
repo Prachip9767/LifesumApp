@@ -135,10 +135,10 @@ class SignUpWithAccountFragment : Fragment(R.layout.fragment_sign_up_with_accoun
                     //viewModel.
                     addUserDetailsToServer(user)
 
-                    val dashboardData = DashboardEntity(curr_date, 0, 0, 0, 0, 0, 0, 0)
+                    val dashboardData = DashboardEntity(curr_date, 0, 0, 0, 0, 0, 0, 0.0)
                     //viewModel.
                     addDashboardDataToServer(dashboardData)
-                    startActivity(Intent(context, MainActivity::class.java))
+                    startActivity(Intent(context, com.example.lifesum.UI.activites.MainActivity::class.java))
 
                 } else {
                     Log.d("rkpsx7", "user")

@@ -29,19 +29,10 @@
                 app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
                 app:toolbarId="@+id/collapsingToolbar">
 
-                <com.smarteist.autoimageslider.SliderView
-                    android:id="@+id/imageSlider"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/curve_toolbar_bg"
-                    app:sliderAnimationDuration="600"
-                    app:sliderAutoCycleDirection="back_and_forth"
-                    app:sliderAutoCycleEnabled="true"
-                    app:sliderIndicatorAnimationDuration="600"
-                    app:sliderIndicatorEnabled="false"
-                    app:sliderIndicatorMarginBottom="12dp"
-                    app:sliderScrollTimeInSec="1"
-                    app:sliderStartAutoCycle="true" />
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:src="@drawable/r1" />
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
 

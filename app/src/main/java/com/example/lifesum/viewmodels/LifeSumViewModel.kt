@@ -34,6 +34,10 @@ class LifeSumViewModel(val repo: Repo) : ViewModel() {
         repo.addDashboardDataToServer(dsbData, date)
     }
 
+    fun addDashboardDataToServer(date: String, dsbData: DashboardEntity) {
+        repo.addDashboardDataToServer(date, dsbData)
+    }
+
     fun getUserDetailsFromServer() {
         repo.getUserDetailsFromServer()
     }
@@ -44,6 +48,10 @@ class LifeSumViewModel(val repo: Repo) : ViewModel() {
 
     fun getDashboardDataFromServer() {
         repo.getDashboardDataFromServer()
+    }
+
+    fun updateDashBoardInDB(dsh: DashboardEntity) {
+        repo.updateDashBoardInDB(dsh)
     }
 
     fun getDashboardDataFromDb(date: String): LiveData<DashboardEntity> {

@@ -39,7 +39,7 @@
             android:ellipsize="end"
             android:text="Apple"
             android:textColor="@color/black"
-            android:textSize="@dimen/sp_24"
+            android:textSize="@dimen/sp_18"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/ivProductImage"
             app:layout_constraintTop_toTopOf="parent" />
@@ -61,7 +61,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_12"
             android:text="73 kcal"
-            android:padding="@dimen/dp_7"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/ivProductImage" />
 

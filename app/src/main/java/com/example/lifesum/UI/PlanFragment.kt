@@ -10,10 +10,10 @@ import kotlinx.android.synthetic.main.fragment_plan.*
 
 class PlanFragment : Fragment(R.layout.fragment_plan) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        imageSliderView()
+       // imageSliderView()
     }
 
-    private fun setImageInSlider(images: ArrayList<String>, imageSlider: SliderView) {
+    private fun setImageInSlider(images: ArrayList<Int>, imageSlider: SliderView) {
         val adapter = MySliderImageAdapter()
         adapter.renewItems(images)
         imageSlider.setSliderAdapter(adapter)
@@ -21,16 +21,14 @@ class PlanFragment : Fragment(R.layout.fragment_plan) {
         imageSlider.startAutoCycle()
     }
 
-private fun imageSliderView() {
-    val imageList: ArrayList<String> = ArrayList()
-    imageList.add("https://www.linkpicture.com/q/WhatsApp-Image-2021-10-02-at-5.36.24-PM.jpeg")
-    imageList.add("https://www.linkpicture.com/q/WhatsApp-Image-2021-10-02-at-3.17.38-PM-1.jpeg")
-    imageList.add("https://www.linkpicture.com/q/WhatsApp-Image-2021-10-02-at-3.17.38-PM-2.jpeg")
-    imageList.add("https://www.linkpicture.com/q/WhatsApp-Image-2021-10-02-at-3.17.38-PM-3.jpeg")
-    imageList.add("https://www.linkpicture.com/q/WhatsApp-Image-2021-10-02-at-3.17.38-PM-4.jpeg")
-    imageList.add("https://www.linkpicture.com/q/WhatsApp-Image-2021-10-02-at-3.17.38-PM-5.jpeg")
-    setImageInSlider(imageList, imageSlider = imageSlider)
-}
+//private fun imageSliderView() {
+//    val imageList: ArrayList<Int> = ArrayList()
+//    imageList.add(R.drawable.r1)
+//    imageList.add(R.drawable.r2)
+//    imageList.add(R.drawable.r3)
+//
+//    setImageInSlider(imageList, imageSlider)
+//}
     }
 
 

@@ -14,5 +14,5 @@ class DashboardEntity(
     @ColumnInfo(name = "carbs") var carbs: Int = 0,
     @ColumnInfo(name = "protein") var protein: Int = 0,
     @ColumnInfo(name = "fat") var fat: Int = 0,
-    @ColumnInfo(name = "water_glass") var water_glass: Int = 0,
+    @ColumnInfo(name = "water_glass") var water_glass: Double = 0.0
 )

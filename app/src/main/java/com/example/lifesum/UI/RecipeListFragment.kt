@@ -7,6 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.lifesum.R
 
-class RecipeListFragment : Fragment(R.layout.fragment_recipe_list) {
+class RecipeListFragment : Fragment(R.layout.recipe_layout) {
 
 }

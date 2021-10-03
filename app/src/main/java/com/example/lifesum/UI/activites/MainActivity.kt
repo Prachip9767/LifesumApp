@@ -54,28 +54,6 @@ class MainActivity : AppCompatActivity() {
         viewModel.getUserDetailsFromServer()//and add to room
     }
 
-//    private fun insertToDailyMealDB() {
-//
-//        val dataListener = object : ValueEventListener {
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                val items = snapshot.children.map { it.getValue(FoodItem::class.java)!! }
-//                dataList.clear()
-//                dataList = items as ArrayList<FoodItem>
-//
-//                val dailyMealData = DailyMealData("01-10-2021", "breakfast", dataList)
-//
-//                CoroutineScope(Dispatchers.IO).launch {
-//                    dao.insertToMealData(dailyMealData)
-//                }
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                toast("Error in fetching data")
-//            }
-//        }
-//
-//        foodItemRef.addValueEventListener(dataListener)
-//    }
 
     private fun initMV() {
         roomDB = MainRoomDB.getMainRoomDb(this)

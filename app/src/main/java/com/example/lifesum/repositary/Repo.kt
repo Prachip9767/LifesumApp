@@ -17,6 +17,7 @@ class Repo(private val dao: DAO) {
     private val fsRoot = FirebaseFirestore.getInstance()
     private val userUID = FirebaseAuth.getInstance().currentUser?.uid
     private val userRef = fsRoot.collection("Users").document(userUID!!)
+    private val gAuth = FirebaseAuth.getInstance()
     private val dashboardRef = fsRoot.collection("Users").document(userUID!!)
         .collection("Dashboard")
     private val mealRecordRef = fsRoot.collection("Users").document(userUID!!)
@@ -24,6 +25,12 @@ class Repo(private val dao: DAO) {
 
     fun addMealRecordsToServer(date: String, record: DailyMealData) {
         //mealRecordRef.document(date).collection("records").document(id.toString()).set(record)
+    }
+
+    fun addDashboardDataToServer(date: String, dsbData: DashboardEntity) {
+        val userUID = gAuth.currentUser?.uid
+        fsRoot.collection("Users").document(userUID!!)
+            .collection("Dashboard").document(date).set(dsbData)
     }
 
     fun insertMealRecordsToDB(mealRecord: DailyMealData) {
@@ -62,6 +69,12 @@ class Repo(private val dao: DAO) {
 
     fun addDashboardDataToServer(dsbData: DashboardEntity, date: String) {
         dashboardRef.document(date).set(dsbData)
+    }
+
+    fun updateDashBoardInDB(dsh: DashboardEntity) {
+        CoroutineScope(Dispatchers.IO).launch {
+            dao.insertToDashBoard(dsh)
+        }
     }
 
 

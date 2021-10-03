@@ -9,13 +9,13 @@ import java.util.*
 
 class MySliderImageAdapter() :
     SliderViewAdapter<MySliderImageAdapter.VH>() {
-    private var mSliderItems = ArrayList<String>()
-    fun renewItems(sliderItems: ArrayList<String>) {
+    private var mSliderItems = ArrayList<Int>()
+    fun renewItems(sliderItems: ArrayList<Int>) {
         mSliderItems = sliderItems
         notifyDataSetChanged()
     }
 
-    fun addItem(sliderItem: String) {
+    fun addItem(sliderItem: Int) {
         mSliderItems.add(sliderItem)
         notifyDataSetChanged()
     }

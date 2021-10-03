@@ -74,6 +74,7 @@ dependencies {
     //
     def anko_version = '0.10.0'
 
+
 //Room
     implementation 'androidx.room:room-ktx:2.3.0'
     kapt 'androidx.room:room-compiler:2.3.0'
@@ -104,7 +105,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
 
 
-
     implementation 'com.mikhaellopez:circularimageview:4.3.0'
     implementation 'pl.rspective.pagerdatepicker:pagerdatepicker:1.2.0'
+
 }

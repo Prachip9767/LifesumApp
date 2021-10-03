@@ -17,14 +17,14 @@ class UserDetailsActivity : AppCompatActivity() {
         dao = roomDB.getDao()
 
 
-//        dao.getUserFromDB().observe(this, {
-//            tvCurrWeightS.text = it.curr_weight.toString()
-//            tvGoalWeightS.text = it.goal_weight.toString()
-//            tvHeightInS.text = it.height.toString()
-//            val dob = "${it.b_date}-${it.b_month}-${it.b_year}"
-//            DOBS.text = dob
-//            tvGenderS.text = it.gender
-//        })
+        dao.getUserFromDB().observe(this, {
+            tvCurrWeightS.text = it.curr_weight.toString()
+            tvGoalWeightS.text = it.goal_weight.toString()
+            tvHeightInS.text = it.height.toString()
+            val dob = "${it.b_date}-${it.b_month}-${it.b_year}"
+            DOBS.text = dob
+            tvGenderS.text = it.gender
+        })
 
 
     }

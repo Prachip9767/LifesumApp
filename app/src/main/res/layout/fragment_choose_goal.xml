@@ -60,42 +60,77 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_question">
 
-
-        <TextView
-            android:id="@+id/tv_lose_weight"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
             android:background="@drawable/button_default_effect"
-            android:gravity="center"
-            android:padding="33dp"
-            android:text="LOSE WEIGHT"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tv_maintain_weight"
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/illustration_loose" />
+
+            <TextView
+                android:id="@+id/tv_lose_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="33dp"
+                android:text="LOSE WEIGHT"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
             android:background="@drawable/button_default_effect"
-            android:gravity="center"
-            android:padding="33dp"
-            android:text="MAINTAIN WEIGHT"
-            android:textColor="@color/black"
-            android:textSize="18sp"/>
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tv_gain_weight"
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/illustration_maintain" />
+
+            <TextView
+                android:id="@+id/tv_maintain_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="33dp"
+                android:text="MAINTAIN WEIGHT"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
             android:background="@drawable/button_default_effect"
-            android:gravity="center"
-            android:padding="33dp"
-            android:text="GAIN WEIGHT"
-            android:textColor="@color/black"
-            android:textSize="18sp"/>
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/illustration_gain" />
+
+            <TextView
+                android:id="@+id/tv_gain_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="33dp"
+                android:text="GAIN WEIGHT"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
     </LinearLayout>
 
     <TextView
@@ -106,8 +141,7 @@
         android:padding="7dp"
         android:text="@string/privacy_text"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/btn_next1"/>
-
+        app:layout_constraintBottom_toTopOf="@+id/btn_next1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_next1"

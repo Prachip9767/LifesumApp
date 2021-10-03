@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.lifesum.LocalDatabase.DAO
 import com.example.lifesum.LocalDatabase.MainRoomDB
 import com.example.lifesum.R
-import com.example.lifesum.UI.activites.MainActivity
+import com.example.lifesum.UI.activites. MainActivity
 import com.example.lifesum.models.DashboardEntity
 import com.example.lifesum.models.UserEntity
 import com.example.lifesum.repositary.Repo

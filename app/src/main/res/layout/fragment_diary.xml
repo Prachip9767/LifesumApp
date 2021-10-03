@@ -10,7 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -25,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:background="@drawable/ctr_bg"
-                android:text="Classic Dieting"
+                android:text="@string/classic_dieting"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
@@ -68,6 +69,7 @@
                     <com.mikhaellopez.circularprogressbar.CircularProgressBar
                         android:id="@+id/circularProgressBar"
                         android:layout_width="148dp"
+                        android:textAllCaps="true"
                         android:layout_height="149dp"
                         android:layout_gravity="center|top"
                         android:layout_marginTop="50dp"
@@ -90,12 +92,13 @@
                         android:textSize="20sp" />
 
                     <TextView
+                        android:textAllCaps="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|start"
                         android:layout_marginStart="30dp"
                         android:scaleType="centerCrop"
-                        android:text="Eaten"
+                        android:text="@string/eaten"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
 
@@ -115,7 +118,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:scaleType="centerCrop"
-                        android:text="KCAL left"
+                        android:text="@string/kcal_left"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
 
@@ -132,12 +135,13 @@
                         android:textSize="20sp" />
 
                     <TextView
+                        android:textAllCaps="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|end"
                         android:layout_marginEnd="30dp"
                         android:scaleType="centerCrop"
-                        android:text="Burned"
+                        android:text="@string/burned"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
 
@@ -158,7 +162,8 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="70dp"
                         android:scaleType="centerCrop"
-                        android:text="Protine"
+                        android:text="@string/protein"
+                        android:textAllCaps="true"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         app:layout_collapseMode="parallax" />
@@ -176,13 +181,14 @@
                         app:layout_collapseMode="parallax" />
 
                     <TextView
+                        android:textAllCaps="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|start"
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="70dp"
                         android:scaleType="centerCrop"
-                        android:text="Carbs"
+                        android:text="@string/carbs"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         app:layout_collapseMode="parallax" />
@@ -206,7 +212,8 @@
                         android:layout_marginTop="70dp"
                         android:layout_marginEnd="45dp"
                         android:scaleType="centerCrop"
-                        android:text="Fat"
+                        android:text="@string/fat"
+                        android:textAllCaps="true"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         app:layout_collapseMode="parallax" />
@@ -232,6 +239,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="12dp"
+                        android:textColor="#242424"
                         android:text="select date"
                         android:textSize="22sp"
                         android:textStyle="bold" />
@@ -262,6 +270,7 @@
                                     android:layout_marginBottom="10dp"
                                     android:gravity="start"
                                     android:text="Water"
+                                    android:textColor="@color/black"
                                     android:textSize="25sp" />
 
                                 <TextView
@@ -273,6 +282,7 @@
                                     android:layout_marginEnd="10dp"
                                     android:layout_marginBottom="10dp"
                                     android:gravity="start"
+                                    android:textColor="@color/black"
                                     android:text="0 L"
                                     android:textSize="25sp" />
                             </RelativeLayout>
@@ -415,6 +425,7 @@
                                 tools:ignore="NotSibling" />
 
                             <TextView
+                                android:textColor="@color/black"
                                 android:id="@+id/breakfast"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -426,6 +437,7 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
+                                android:textColor="@color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
@@ -469,6 +481,7 @@
                                 tools:ignore="NotSibling" />
 
                             <TextView
+                                android:textColor="@color/black"
                                 android:id="@+id/lunch"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -480,6 +493,7 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
+                                android:textColor="@color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
@@ -523,6 +537,7 @@
                                 tools:ignore="NotSibling" />
 
                             <TextView
+                                android:textColor="@color/black"
                                 android:id="@+id/dinner"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -534,6 +549,7 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
+                                android:textColor="@color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
@@ -577,6 +593,7 @@
                                 tools:ignore="NotSibling" />
 
                             <TextView
+                                android:textColor="@color/black"
                                 android:id="@+id/snack"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -588,6 +605,7 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
+                                android:textColor="@color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
@@ -630,6 +648,7 @@
                                 tools:ignore="NotSibling" />
 
                             <TextView
+                                android:textColor="@color/black"
                                 android:id="@+id/exercise"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -641,6 +660,7 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
+                                android:textColor="@color/black"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"

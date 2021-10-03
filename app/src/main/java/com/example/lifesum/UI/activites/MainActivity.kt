@@ -50,8 +50,8 @@ class MainActivity : AppCompatActivity(), onBackPressForFragment {
         bottomNavigation()
 
 //        insertToDailyMealDB()
-        viewModel.getDashboardDataFromServer()//and add to room
-        viewModel.getUserDetailsFromServer()//and add to room
+        //viewModel.getDashboardDataFromServer()//and add to room
+        //viewModel.getUserDetailsFromServer()//and add to room
     }
 
     private fun insertToDailyMealDB() {

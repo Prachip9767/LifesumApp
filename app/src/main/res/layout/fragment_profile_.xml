@@ -29,7 +29,7 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_margin="25dp"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/profile_image" />
 
 
                     <LinearLayout
@@ -43,15 +43,16 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Name"
-                            android:textColor="#252525"
+                            android:textColor="@color/black"
                             android:textSize="30sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/norms_pro_normal"
                             android:text="Lose Weight· Standard"
-                            android:textColor="#252525"
+                            android:textColor="@color/black"
                             android:textSize="15sp" />
 
 
@@ -98,14 +99,14 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/ic_baseline_attribution_24" />
+                            android:src="@drawable/ic_body" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:text="Favorites"
-                            android:textColor="#252525"
+                            android:textColor="@color/black"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -128,14 +129,14 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/ic_outline_pie_chart_24" />
+                            android:src="@drawable/ic_chart" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:text="Statistics"
-                            android:textColor="#252525"
+                            android:textColor="@color/black"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -158,14 +159,14 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/ic_outline_favorite_24" />
+                            android:src="@drawable/ic_heart" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:text="Favorites"
-                            android:textColor="#252525"
+                            android:textColor="@color/black"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -184,23 +185,24 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:weightSum="4">
+
+                    android:weightSum="5">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:weightSum="4">
+                        android:weightSum="5">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
-                            android:layout_weight="4"
+                            android:layout_weight="5"
                             android:gravity="center"
 
                             android:text="Streaks"
-                            android:textColor="#252525"
+                            android:textColor="@color/black"
                             android:textSize="30sp"
                             android:textStyle="bold" />
 
@@ -240,7 +242,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:text="0 days"
-                                android:textColor="#252525"
+                                android:textColor="@color/black"
                                 android:textSize="30sp" />
 
                             <TextView
@@ -271,7 +273,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:text="0 days"
-                                android:textColor="#252525"
+                                android:textColor="@color/black"
                                 android:textSize="30sp" />
 
                             <TextView
@@ -290,7 +292,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp">
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -310,7 +313,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:text="Get Your Life Score"
-                            android:textColor="#252525"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -319,7 +322,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:text="Get tips and insights on your food  and exercise habits every week."
-                            android:textColor="#252525" />
+                            android:textColor="@color/black" />
 
                         <com.google.android.material.button.MaterialButton
                             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -345,6 +348,56 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_margin="10dp"
+                            android:text="GET YOUR GOAL"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/whistle_apple" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="Every kilo starts with a gram, don't forget to keep us \n                          updated on progress."
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -368,7 +421,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:text="Boost Your knowledge"
-                            android:textColor="#252525"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -377,7 +430,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:text="Get all the facts you need about nutrition."
-                            android:textColor="#252525" />
+                            android:textColor="@color/black" />
+
+
                     </LinearLayout>
 
                     <ImageView
@@ -386,62 +441,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
-                        android:src="@drawable/share" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:text="Goal"
-                        android:layout_marginBottom="30dp"
-                        android:layout_marginTop="30dp"
-                        android:gravity="center"
-                        android:textColor="#242424"
-                        android:textSize="30sp"
-                        android:layout_height="wrap_content" />
-
-                    <com.airbnb.lottie.LottieAnimationView
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_gravity="center"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:lottie_autoPlay="true"
-                        app:lottie_loop="true"
-                        app:lottie_rawRes="@raw/whistle_apple" />
-
-                    <TextView
-                        android:layout_marginTop="30dp"
-                        android:layout_width="match_parent"
-                        android:text="Every kilo starts with a gram, don't forget to
-        keep us updated on you progress"
-                        android:textColor="#242424"
-                        android:gravity="center"
-                        android:textSize="20sp"
-                        android:layout_height="wrap_content" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/quizeP"
-                        style="@style/createAccountButton"
-                        android:padding="17dp"
-                        android:text="Update your weight"
-                        android:textAllCaps="true"
-                        android:textColor="@color/white"
-                        android:textSize="15sp"
-                        app:cornerRadius="37dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/video_view_m" />
+                        android:src="@drawable/streaks_apple_how" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -468,7 +468,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:text="Sharing is caring"
-                            android:textColor="#252525"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -478,6 +478,8 @@
                             android:layout_margin="10dp"
                             android:text="Help your friends het healthier and happier."
                             android:textColor="@color/black" />
+
+
                     </LinearLayout>
 
                     <ImageView
@@ -486,9 +488,11 @@
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
-                        android:src="@drawable/boast" />
+                        android:src="@drawable/sharing" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -13,5 +13,5 @@ class FoodItem(
     var ingredients: String = "",
     var instructions: String = "",
     var type: String = ""
-//
+
 )

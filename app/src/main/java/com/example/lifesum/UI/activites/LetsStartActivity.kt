@@ -26,11 +26,6 @@ class LetsStartActivity : AppCompatActivity() {
 
         lets_start.setOnClickListener {
             startActivity(Intent(this, CreateAccountActivity::class.java))
-//            val chooseGoalFragment = ChooseGoalFragment()
-//            this.supportFragmentManager.beginTransaction()
-//                .replace(R.id.createAccountFragmentContainer, chooseGoalFragment)
-//                .addToBackStack("")
-//                .commit()
         }
     }
 }

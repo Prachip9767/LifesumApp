@@ -23,8 +23,8 @@ class Repo(private val dao: DAO) {
     private val mealRecordRef = fsRoot.collection("Users").document(userUID!!)
         .collection("MealRecords")
 
-    fun addMealRecordsToServer(date: String, record: DailyMealData) {
-        //mealRecordRef.document(date).collection("records").document(id.toString()).set(record)
+    fun addMealRecordsToServer(date: String,type: String, record: DailyMealData) {
+        mealRecordRef.document(date+type).set(record)
     }
 
     fun addDashboardDataToServer(date: String, dsbData: DashboardEntity) {
@@ -59,7 +59,7 @@ class Repo(private val dao: DAO) {
 
 
     fun getUserMealRecordFromDB(date: String, type: String): LiveData<DailyMealData> {
-        return dao.getMealData(date, type)
+        return dao.getMealData(date + type)
     }
 
 

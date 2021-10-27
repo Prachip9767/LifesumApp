@@ -45,6 +45,7 @@
                     app:lottie_rawRes="@raw/recipe"
                     tools:ignore="NotSibling" />
                 <EditText
+                    android:id="@+id/clickToSearch"
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -193,6 +194,7 @@
                     app:layout_constraintTop_toBottomOf="@id/topscroll" />
 
                 <TextView
+                    android:id="@+id/btn_seeAllRecipe"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"

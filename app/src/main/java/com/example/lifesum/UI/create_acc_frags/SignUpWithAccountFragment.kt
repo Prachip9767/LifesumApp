@@ -2,12 +2,10 @@ package com.example.lifesum.UI.create_acc_frags
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.lifesum.R
-import com.example.lifesum.UI.activites. MainActivity
 import com.example.lifesum.models.DashboardEntity
 import com.example.lifesum.models.UserEntity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -18,6 +16,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_sign_up_with_account.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -132,16 +133,22 @@ class SignUpWithAccountFragment : Fragment(R.layout.fragment_sign_up_with_accoun
                         height, curr_weight, goal_weight
                     )
 
-                    //viewModel.
-                    addUserDetailsToServer(user)
+                    CoroutineScope(Dispatchers.IO).launch {
+                        addUserDetailsToServer(user)
+                    }
 
-                    val dashboardData = DashboardEntity(curr_date, 0, 0, 0, 0, 0, 0, 0.0)
-                    //viewModel.
-                    addDashboardDataToServer(dashboardData)
-                    startActivity(Intent(context, com.example.lifesum.UI.activites.MainActivity::class.java))
+                    val dashboardData = DashboardEntity(curr_date, 0, 2044, 0, 0, 0, 0, 0.0)
 
+                    CoroutineScope(Dispatchers.IO).launch {
+                        addDashboardDataToServer(dashboardData)
+                    }
+                    startActivity(
+                        Intent(
+                            context, com.example.lifesum.UI.activites.MainActivity::class.java
+                        )
+                    )
+                    activity?.finish()
                 } else {
-                    Log.d("rkpsx7", "user")
                     toast("Sign in Failed")
                 }
             }

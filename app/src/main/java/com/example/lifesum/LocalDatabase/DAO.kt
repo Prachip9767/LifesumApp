@@ -31,8 +31,8 @@ interface DAO {
     @Query("Select * from DashBoardTable where date= :date")
     fun getDashboardDataFromDb(date: String): LiveData<DashboardEntity>
 
-    @Query("Select * from DailyMealDataTable where type =:type and date =:date")
-    fun getMealData(date: String, type: String): LiveData<DailyMealData>
+    @Query("Select * from DailyMealDataTable where DATEnTYPE =:dateNtype")
+    fun getMealData(dateNtype:String): LiveData<DailyMealData>
 
     //delete
     @Delete

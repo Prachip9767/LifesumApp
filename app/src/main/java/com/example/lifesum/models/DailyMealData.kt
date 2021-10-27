@@ -5,11 +5,8 @@ import com.google.gson.Gson
 
 @Entity(tableName = "DailyMealDataTable")
 class DailyMealData(
-    @ColumnInfo(name = "date")
-    var date: String = "",
-
     @PrimaryKey
-    @ColumnInfo(name = "type")
+    @ColumnInfo(name = "DATEnTYPE")
     var type: String = "",
 
     @ColumnInfo(name = "Item")

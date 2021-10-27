@@ -14,7 +14,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="classic_dieting">Classic Dieting</string>
     <string name="eaten">Eaten</string>
-    <string name="kcal_left">KCAL left</string>
+    <string name="kcal_left">KCAL LEFT</string>
     <string name="burned">Burned</string>
     <string name="carbs">Carbs</string>
     <string name="protein">Protein</string>

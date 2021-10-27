@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:id="@+id/clickOnRecipe"
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
@@ -15,7 +16,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/ivItem"
+                android:id="@+id/ivItemImage_r"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:background="@drawable/square"
@@ -23,16 +24,19 @@
                 android:src="@drawable/bcpudding" />
 
             <TextView
-                android:id="@+id/tvItemName"
+                android:id="@+id/tvItemName_r"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ivItem"
-                android:layout_margin="10dp"
+                android:layout_below="@+id/ivItemImage_r"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 android:text="Chia and banana pudding"
                 android:textSize="15sp" />
 
             <TextView
-                android:id="@+id/tvKcal"
+                android:id="@+id/tvKcal_r"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"

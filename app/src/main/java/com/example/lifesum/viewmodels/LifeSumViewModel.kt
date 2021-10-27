@@ -14,8 +14,8 @@ class LifeSumViewModel(val repo: Repo) : ViewModel() {
         repo.addUserDetailsToServer(user)
     }
 
-    fun addMealRecordsToServer(date: String,record: DailyMealData) {
-        repo.addMealRecordsToServer(date,  record)
+    fun addMealRecordsToServer(date:String,type: String,record: DailyMealData) {
+        repo.addMealRecordsToServer(date,type,record)
     }
 
     fun getUserMealRecordFromDB(date: String, type: String): LiveData<DailyMealData> {

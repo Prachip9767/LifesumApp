@@ -99,10 +99,10 @@ class MealRecordActivity : AppCompatActivity(), onMealSearchItemClicked {
 
     override fun onMealSearchItemClicked(item: FoodItem) {
         mealRecordDataList.add(item)
-        val recordMeal = DailyMealData(curr_date, foodType, mealRecordDataList)
+        val recordMeal = DailyMealData(curr_date + foodType, mealRecordDataList)
 
         viewModel.insertMealRecordsToDB(recordMeal)
-        //viewModel.addMealRecordsToServer(curr_date, recordMeal)
+        viewModel.addMealRecordsToServer(curr_date, foodType, recordMeal)
         toast("Added to Track records")
 
     }
@@ -118,6 +118,10 @@ class MealRecordActivity : AppCompatActivity(), onMealSearchItemClicked {
         intent.putExtra("sat_fat", item.saturated_fat.toString())
         intent.putExtra("unSat_fat", item.unsaturated_fat.toString())
         startActivity(intent)
+    }
+
+    override fun onRecipeItemClick(item: FoodItem) {
+
     }
 
 

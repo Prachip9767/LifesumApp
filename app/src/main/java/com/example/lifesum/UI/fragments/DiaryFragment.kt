@@ -2,7 +2,6 @@ package com.example.lifesum.UI.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -49,136 +48,150 @@ class DiaryFragment : Fragment(R.layout.fragment_diary) {
     private lateinit var db: FirebaseDatabase
     private lateinit var foodItemRef: DatabaseReference
     private var water_glasses: Double = 0.0
+    private var glass_count = 0
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         initMV()
         initDate()
-        setGlasses()
         inflateDataToDashboard()
         setSectionClicks()
+        glasses()
+        setGlassOnLogin()
 
 
     }
+
+    private fun glasses() {
+        revertGlasses()
+        btn_add_glass.setOnClickListener {
+            setSpeedForGlassAnimation()
+            glass_count++
+            if (glass_count < 8) {
+                water_glasses += 0.25
+                val dsh = DashboardEntity(
+                    dsh_date,
+                    eaten,
+                    kcal,
+                    burned,
+                    carbs,
+                    protein,
+                    fat,
+                    water_glasses
+                )
+                viewModel.updateDashBoardInDB(dsh)
+                tv_water_content.text = "Water: ${water_glasses} L"
+                when (glass_count) {
+                    1 -> glassA.visibility = View.VISIBLE
+                    2 -> glassB.visibility = View.VISIBLE
+                    3 -> glassC.visibility = View.VISIBLE
+                    4 -> glassD.visibility = View.VISIBLE
+                    5 -> glassE.visibility = View.VISIBLE
+                    6 -> glassF.visibility = View.VISIBLE
+                    7 -> {
+                        glassG.visibility = View.VISIBLE
+                        you_rock_ani.visibility = View.VISIBLE
+                    }
+                }
+            }
+        }
+    }
+
 
     fun updateDashBoardToDB() {
         val dsh = DashboardEntity(dsh_date, eaten, kcal, burned, carbs, protein, fat, water_glasses)
         viewModel.updateDashBoardInDB(dsh)
+
     }
 
-    fun setGlasses() {
-//        //glassAa.setOnClickListener {
-//            //glassAa.isVisible = false
-//            glassA.isVisible = true
-//            glassA.playAnimation()
-//            glassA.speed = 5f
-//        }
-
-        glassA.setOnClickListener {
-            //glassAa.isVisible = true
-            //glassA.isVisible = false
-            glassA.playAnimation()
-            glassA.speed = 5f
-            water_glasses += 0.25
-            tv_water_content.text = "${water_glasses.toString()} L"
-            updateDashBoardToDB()
+    private fun setGlassOnLogin() {
+        revertGlasses()
+        setSpeedForGlassAnimation()
+        glass_count = (water_glasses * 4.0).toInt()
+        when (glass_count) {
+            1 -> {
+                glassA.visibility = View.VISIBLE
+                glassA.playAnimation()
+            }
+            2 -> {
+                glassB.visibility = View.VISIBLE
+                glassB.playAnimation()
+                glassA.visibility = View.VISIBLE
+            }
+            3 -> {
+                glassA.visibility = View.VISIBLE
+                glassB.visibility = View.VISIBLE
+                glassC.visibility = View.VISIBLE
+            }
+            4 -> {
+                glassA.visibility = View.VISIBLE
+                glassB.visibility = View.VISIBLE
+                glassC.visibility = View.VISIBLE
+                glassD.visibility = View.VISIBLE
+            }
+            5 -> {
+                glassA.visibility = View.VISIBLE
+                glassB.visibility = View.VISIBLE
+                glassC.visibility = View.VISIBLE
+                glassD.visibility = View.VISIBLE
+                glassE.visibility = View.VISIBLE
+            }
+            6 -> {
+                glassA.visibility = View.VISIBLE
+                glassB.visibility = View.VISIBLE
+                glassC.visibility = View.VISIBLE
+                glassD.visibility = View.VISIBLE
+                glassE.visibility = View.VISIBLE
+                glassF.visibility = View.VISIBLE
+            }
+            7 -> {
+                glassA.visibility = View.VISIBLE
+                glassB.visibility = View.VISIBLE
+                glassC.visibility = View.VISIBLE
+                glassD.visibility = View.VISIBLE
+                glassE.visibility = View.VISIBLE
+                glassF.visibility = View.VISIBLE
+                glassG.visibility = View.VISIBLE
+                you_rock_ani.visibility = View.VISIBLE
+            }
 
         }
+    }
 
-//        glassCc.setOnClickListener {
-//            glassCc.isVisible = false
-//            glassC.isVisible = true
-//            glassC.playAnimation()
-//            glassC.speed = 5f
-//        }
+    private fun revertGlasses() {
+        glassA.visibility = View.GONE
+        glassB.visibility = View.GONE
+        glassC.visibility = View.GONE
+        glassD.visibility = View.GONE
+        glassE.visibility = View.GONE
+        glassF.visibility = View.GONE
+        glassG.visibility = View.GONE
+        you_rock_ani.visibility = View.GONE
 
-        glassC.setOnClickListener {
-//            glassCc.isVisible = true
-//            glassC.isVisible = false
-            glassC.playAnimation()
-            glassC.speed = 5f
-            water_glasses += 0.25
-            tv_water_content.text = "${water_glasses.toString()} L"
-            updateDashBoardToDB()
-        }
-//        glassBb.setOnClickListener {
-//            glassBb.isVisible = false
-//            glassB.isVisible = true
-//            glassB.playAnimation()
-//            glassB.speed = 5f
-//        }
+    }
 
-        glassB.setOnClickListener {
-//            glassBb.isVisible = true
-//            glassB.isVisible = false
-            glassB.playAnimation()
-            glassB.speed = 5f
-            water_glasses += 0.25
-            tv_water_content.text = "${water_glasses.toString()} L"
-            updateDashBoardToDB()
-        }
-//        glassDd.setOnClickListener {
-//            glassDd.isVisible = false
-//            glassD.isVisible = true
-//            glassD.playAnimation()
-//            glassD.speed = 5f
-//        }
 
-        glassD.setOnClickListener {
-//            glassDd.isVisible = true
-//            glassD.isVisible = false
-            glassD.playAnimation()
-            glassD.speed = 5f
-            water_glasses += 0.25
-            tv_water_content.text = "${water_glasses.toString()} L"
-            updateDashBoardToDB()
-        }
-//        glassEe.setOnClickListener {
-//            glassEe.isVisible = false
-//            glassE.isVisible = true
-//            glassE.playAnimation()
-//            glassE.speed = 5f
-//        }
+    fun setGlasses(date: String) {
+        viewModel.getDashboardDataFromDb(date).observe(viewLifecycleOwner, Observer {
+            if (it != null) {
+                water_glasses = it.water_glass
+            }else{
+                water_glasses = 0.0
+                glass_count = 0
+            }
+            glasses()
+        })
 
-        glassE.setOnClickListener {
-            //glassEe.isVisible = true
-            //glassE.isVisible = false
-            glassE.playAnimation()
-            glassE.speed = 5f
-            water_glasses += 0.25
-            tv_water_content.text = "${water_glasses.toString()} L"
-            updateDashBoardToDB()
-        }
-//        glassFf.setOnClickListener {
-//            glassFf.isVisible = false
-//            glassF.isVisible = true
-//            glassF.playAnimation()
-//            glassF.speed = 5f
-//        }
+    }
 
-        glassF.setOnClickListener {
-//            glassFf.isVisible = true
-//            glassF.isVisible = false
-            glassF.playAnimation()
-            glassF.speed = 5f
-            water_glasses += 0.25
-            tv_water_content.text = "${water_glasses.toString()} L"
-            updateDashBoardToDB()
-        }
-//        glassGg.setOnClickListener {
-//            glassGg.isVisible = false
-//            glassG.isVisible = true
-//            glassG.playAnimation()
-//            glassG.speed = 5f
-//        }
 
-        glassG.setOnClickListener {
-//            glassGg.isVisible = true
-//            glassG.isVisible = false
-            glassG.playAnimation()
-            glassG.speed = 5f
-            water_glasses += 0.25
-            tv_water_content.text = "${water_glasses.toString()} L"
-            updateDashBoardToDB()
-        }
+    private fun setSpeedForGlassAnimation() {
+        glassA.speed = 5f
+        glassB.speed = 5f
+        glassC.speed = 5f
+        glassD.speed = 5f
+        glassE.speed = 5f
+        glassF.speed = 5f
+        glassG.speed = 5f
+        you_rock_ani.speed = 3f
     }
 
     private fun setSectionClicks() {
@@ -220,12 +233,10 @@ class DiaryFragment : Fragment(R.layout.fragment_diary) {
             intent.putExtra("water", water_glasses)
             startActivity(intent)
         }
-
     }
 
 
     private fun inflateDataToDashboard() {
-        Log.d("rkpsx7-x", dsh_date.toString())
         viewModel.getDashboardDataFromDb(dsh_date).observe(this.requireActivity(), Observer {
             if (it != null) {
                 tv_eaten.text = it?.eaten.toString()
@@ -235,27 +246,13 @@ class DiaryFragment : Fragment(R.layout.fragment_diary) {
                 tv_protein.text = it?.protein.toString()
                 tv_kacl_left.text = it?.kacl.toString()
                 water_glasses = it?.water_glass!!
+                setGlassOnLogin()
             } else {
-                tv_eaten.text = "0"
-                tv_carbs.text = "0"
-                tv_burned.text = "0"
-                tv_fat.text = "0"
-                tv_protein.text = "0"
-                tv_kacl_left.text = "0"
-
-                water_glasses = 0.0
-                dsh_date = dsh_date
-                eaten = 0
-                kcal = 0
-                burned = 0
-                carbs = 0
-                protein = 0
-                fat = 0
-                water_glasses = 0.0
-                updateDashBoardToDB()
+                setDataToViewsForNull()
             }
         })
     }
+
 
     private fun initDate() {
         dsh_date = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
@@ -280,13 +277,45 @@ class DiaryFragment : Fragment(R.layout.fragment_diary) {
 
             val simpleFormat = SimpleDateFormat("EEEE, dd MMM", Locale.US)
             val simpleFormat1 = SimpleDateFormat("dd-MM-yyyy", Locale.US)
-            Log.d("rkpsx7", simpleFormat1.toString())
             val date = Date(selection + offsetFromUTC)
             select_date.text = simpleFormat.format(date)
             dsh_date = simpleFormat1.format(date)
-            Log.d("rkpsx7", dsh_date.toString())
             inflateDataToDashboard()
+            setGlasses(dsh_date)
         }
+    }
+
+    private fun initMV() {
+        roomDB = MainRoomDB.getMainRoomDb(this.requireActivity())
+        dao = roomDB.getDao()
+        repo = Repo(dao)
+        viewModel = LifeSumViewModel(repo)
+
+        db = FirebaseDatabase.getInstance()
+        auth = FirebaseAuth.getInstance()
+        dbroot = FirebaseFirestore.getInstance()
+        uid = auth.currentUser?.uid
+        foodItemRef = db.getReference("FoodItems")
+    }
+
+    fun setDataToViewsForNull() {
+        tv_eaten.text = "0"
+        tv_carbs.text = "0"
+        tv_burned.text = "0"
+        tv_fat.text = "0"
+        tv_protein.text = "0"
+        tv_kacl_left.text = "2044"
+
+        water_glasses = 0.0
+        dsh_date = dsh_date
+        eaten = 0
+        kcal = 2044
+        burned = 0
+        carbs = 0
+        protein = 0
+        fat = 0
+        water_glasses = 0.0
+        updateDashBoardToDB()
     }
 
 
@@ -315,32 +344,5 @@ class DiaryFragment : Fragment(R.layout.fragment_diary) {
 //        foodItemRef.addValueEventListener(dataListener)
 //    }
 
-    private fun initMV() {
-        roomDB = MainRoomDB.getMainRoomDb(this.requireActivity())
-        dao = roomDB.getDao()
-        repo = Repo(dao)
-        viewModel = LifeSumViewModel(repo)
-
-        db = FirebaseDatabase.getInstance()
-        auth = FirebaseAuth.getInstance()
-        dbroot = FirebaseFirestore.getInstance()
-        uid = auth.currentUser?.uid
-        foodItemRef = db.getReference("FoodItems")
-    }
 
 }
-
-//        Water.speed = 5F
-//        Water2.speed = 5F
-//        Water.setOnClickListener {
-//            Water.playAnimation()
-//        }
-//        Water2.setOnClickListener {
-//            Water2.playAnimation()
-//        }
-//        Water3.setOnClickListener {
-//            Water3.playAnimation()
-//        }
-//        Water4.setOnClickListener {
-//            Water4.playAnimation()
-//        }

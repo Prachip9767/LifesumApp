@@ -20,6 +20,5 @@ class CreateAccountActivity : AppCompatActivity() {
             )
             .replace(R.id.createAccountFragmentContainer, chooseGoalFragment)
             .commit()
-
     }
 }
